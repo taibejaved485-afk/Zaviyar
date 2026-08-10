@@ -36,7 +36,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative pt-16 pb-8 border-t border-slate-100 transition-colors duration-300 overflow-hidden">
+    <footer className="relative pt-16 pb-8 border-t border-slate-800 bg-slate-950 text-white transition-colors duration-300 overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -44,12 +44,12 @@ export default function Footer() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover opacity-100"
         >
           <source src="/footer-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/20" />
+        <div className="absolute inset-0 bg-slate-950/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
       </div>
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">

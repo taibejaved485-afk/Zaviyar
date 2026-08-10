@@ -31,7 +31,14 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-12 sm:py-16 bg-white overflow-hidden transition-colors duration-300 relative">
+    <section id="about" className="py-24 sm:py-32 bg-white overflow-hidden transition-colors duration-300 relative">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-50 rounded-full blur-3xl opacity-60" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-slate-50 rounded-full opacity-20" />
+      </div>
+
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <motion.div
@@ -156,41 +163,42 @@ export default function About() {
 
 
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-32 mt-32">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mb-32 mt-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group p-12 bg-slate-900 rounded-[3.5rem] text-white relative overflow-hidden"
+            className="group p-10 lg:p-14 bg-slate-900 rounded-[4rem] text-white relative overflow-hidden flex flex-col justify-between"
           >
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-10 shadow-2xl shadow-indigo-600/20">
                 <Users size={32} />
               </div>
-              <h3 className="text-3xl font-black mb-6 tracking-tight uppercase tracking-widest text-indigo-400">Our Team</h3>
-              <p className="text-slate-400 text-lg leading-relaxed font-medium">
+              <h3 className="text-3xl lg:text-4xl font-black mb-6 tracking-tight uppercase tracking-widest text-indigo-400">Our Team</h3>
+              <p className="text-slate-400 text-lg lg:text-xl leading-relaxed font-medium">
                 Behind Zaviyar is a team of experienced professionals with diverse backgrounds in strategic planning and organizational development. Each member brings a wealth of knowledge and a passion for helping businesses succeed.
               </p>
             </div>
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-600/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="group p-12 bg-[#FCFAF8] rounded-[3.5rem] border border-slate-100 relative overflow-hidden"
+            className="group p-10 lg:p-14 bg-[#FCFAF8] rounded-[4rem] border border-slate-100 relative overflow-hidden flex flex-col justify-between"
           >
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm text-indigo-600">
+              <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center mb-10 shadow-sm text-indigo-600">
                 <Award size={32} />
               </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight uppercase tracking-widest text-indigo-600">Why Clients Trust Us</h3>
-              <p className="text-slate-600 text-lg leading-relaxed font-medium">
+              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 tracking-tight uppercase tracking-widest text-indigo-600">Why Trust Us</h3>
+              <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-medium">
                 We deliver on our promises. We take the time to understand your challenges, communicate clearly, and remain accountable for the results we help create. This dedication builds long-lasting partnerships.
               </p>
             </div>
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-indigo-100/50 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-100/50 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
           </motion.div>
         </div>
 

@@ -12,15 +12,14 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover scale-105"
-          style={{ opacity: 1 }}
+          className="w-full h-full object-cover scale-105 opacity-100"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        {/* Advanced Overlay */}
-        <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/80" />
+        {/* Subtle Dark Overlay for contrast */}
+        <div className="absolute inset-0 bg-slate-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950/70" />
       </div>
 
       <div className="w-full px-4 sm:px-8 lg:px-12 relative z-10">

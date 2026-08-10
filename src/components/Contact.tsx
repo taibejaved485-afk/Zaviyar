@@ -80,10 +80,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 bg-white transition-colors duration-300 relative overflow-hidden">
+    <section id="contact" className="py-24 sm:py-32 bg-white transition-colors duration-300 relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[120px] -mr-64 -mt-64 opacity-50 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-50 rounded-full blur-[150px] -mr-64 -mt-64 opacity-60 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64 opacity-50 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-slate-100 to-transparent pointer-events-none" />
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">

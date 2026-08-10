@@ -6,4 +6,16 @@
 
 body {
   font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-color: white;
+  zoom: 0.9;
+  -moz-transform: scale(0.9);
+  -moz-transform-origin: top center;
+}
+
+@media (max-width: 1024px) {
+  body {
+    zoom: 1;
+    -moz-transform: none;
+  }
 }
