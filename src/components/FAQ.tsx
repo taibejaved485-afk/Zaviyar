@@ -34,13 +34,13 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-12 sm:py-16 bg-white transition-colors duration-300 overflow-hidden relative">
+    <section id="faq" className="py-24 sm:py-32 bg-white transition-colors duration-300 overflow-hidden relative">
       {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-[120px] -ml-64 -mt-64 opacity-50" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -mr-64 -mb-64 opacity-50" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[150px] -ml-64 -mt-64 opacity-50 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[150px] -mr-64 -mb-64 opacity-50 pointer-events-none" />
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-20 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -65,13 +65,13 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 max-w-2xl mx-auto font-medium"
+            className="text-xl text-slate-600 font-medium"
           >
             Everything you need to know about partnering with Zaviyar for your strategic growth.
           </motion.p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="w-full space-y-6">
           {faqs.map((faq, index) => (
             <motion.div 
               key={index}
@@ -79,7 +79,7 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`rounded-[2rem] transition-all duration-500 overflow-hidden border ${
+              className={`rounded-[2.5rem] transition-all duration-500 overflow-hidden border ${
                 activeIndex === index 
                 ? 'bg-[#FCFAF8] border-indigo-200 shadow-2xl shadow-indigo-500/5' 
                 : 'bg-white border-slate-100 hover:border-slate-200 hover:shadow-xl hover:shadow-slate-200/50'
@@ -87,19 +87,19 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="w-full px-8 py-8 flex items-center justify-between text-left focus:outline-none group"
+                className="w-full px-8 md:px-12 py-8 flex items-center justify-between text-left focus:outline-none group cursor-pointer"
               >
                 <span className={`text-xl lg:text-2xl font-bold transition-colors duration-300 tracking-tight ${
                   activeIndex === index ? 'text-indigo-600' : 'text-slate-900'
                 }`}>
                   {faq.question}
                 </span>
-                <span className={`flex-shrink-0 ml-6 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 ${
+                <span className={`flex-shrink-0 ml-6 w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 ${
                   activeIndex === index 
-                  ? 'bg-indigo-600 text-white rotate-0' 
+                  ? 'bg-indigo-600 text-white rotate-0 shadow-lg shadow-indigo-600/30' 
                   : 'bg-slate-50 text-slate-400 group-hover:bg-indigo-50 group-hover:text-indigo-600'
                 }`}>
-                  {activeIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                  {activeIndex === index ? <Minus size={22} /> : <Plus size={22} />}
                 </span>
               </button>
               
@@ -111,7 +111,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                   >
-                    <div className="px-8 pb-8 text-lg text-slate-600 leading-relaxed font-medium border-t border-indigo-100/50 pt-6">
+                    <div className="px-8 md:px-12 pb-8 text-lg lg:text-xl text-slate-600 leading-relaxed font-medium border-t border-indigo-100/50 pt-6">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -126,17 +126,20 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center p-12 bg-indigo-600 rounded-[3rem] text-white shadow-2xl shadow-indigo-500/20 max-w-4xl mx-auto"
+          className="mt-20 text-center p-12 lg:p-16 bg-indigo-600 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-500/20 w-full relative overflow-hidden group"
         >
-          <h3 className="text-3xl lg:text-4xl font-black mb-4 tracking-tight">Still have questions?</h3>
-          <p className="text-indigo-100 text-lg mb-10 font-medium">We're here to help you navigate your journey.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="#contact" className="px-10 py-4 bg-white text-indigo-600 rounded-2xl font-black hover:-translate-y-1 transition-all shadow-xl text-center">
-              Contact Support
-            </a>
-            <a href="#contact" className="px-10 py-4 bg-indigo-500 text-white border border-indigo-400 rounded-2xl font-black hover:-translate-y-1 transition-all text-center">
-              Book a Demo
-            </a>
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
+          <div className="relative z-10">
+            <h3 className="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Still have questions?</h3>
+            <p className="text-indigo-100 text-xl mb-10 font-medium">We're here to help you navigate your strategic journey.</p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a href="#contact" className="px-10 py-5 bg-white text-indigo-600 rounded-2xl font-black text-lg hover:-translate-y-1 transition-all shadow-xl text-center active:scale-95">
+                Contact Support
+              </a>
+              <a href="#contact" className="px-10 py-5 bg-indigo-500 text-white border border-indigo-400 rounded-2xl font-black text-lg hover:-translate-y-1 transition-all text-center active:scale-95">
+                Book a Consultation
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>
