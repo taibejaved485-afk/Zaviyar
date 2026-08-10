@@ -22,7 +22,7 @@ const commitments = [
 
 export default function Commitment() {
   return (
-    <section className="py-32 bg-white transition-colors duration-300 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-white transition-colors duration-300 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       <div className="absolute top-1/4 -right-64 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[120px] pointer-events-none" />
@@ -56,7 +56,7 @@ export default function Commitment() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            We measure our impact by the value we create for you. From the first interaction to the final delivery, we remain dedicated to excellence and measurable transformation.
+            We measure our success by the success of our clients. From the first consultation to the final implementation, we remain hands-on, transparent, and committed to delivering results that matter. Our goal is not just to advise, but to become a trusted extension of your team, invested in your growth every step of the way.
           </motion.p>
         </div>
 

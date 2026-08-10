@@ -35,7 +35,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-32 bg-[#FCFAF8] transition-colors duration-300 overflow-hidden relative">
+    <section id="process" className="py-12 sm:py-16 bg-[#FCFAF8] transition-colors duration-300 overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-indigo-200 rounded-full blur-[120px]" />
@@ -71,7 +71,7 @@ export default function Process() {
             transition={{ delay: 0.1, duration: 0.8 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            A methodical approach to solving complex business problems and driving measurable growth through precise strategic execution.
+            Every engagement begins with a thorough understanding of your business, industry, and objectives. We develop customized strategies, work collaboratively with your team throughout implementation, and stay engaged until results are achieved.
           </motion.p>
         </div>
 

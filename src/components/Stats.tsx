@@ -35,7 +35,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="py-24 bg-[#FCFAF8] relative overflow-hidden transition-colors duration-300 border-y border-slate-100">
+    <section className="py-12 sm:py-16 bg-[#FCFAF8] relative overflow-hidden transition-colors duration-300 border-y border-slate-100">
       {/* Background visual accents */}
       <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-indigo-200 to-transparent" />
       <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-indigo-200 to-transparent" />

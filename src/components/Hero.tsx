@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-900 transition-colors duration-300 min-h-[90vh] flex items-center">
+    <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden bg-slate-900 transition-colors duration-300 min-h-[80vh] flex items-center">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -31,11 +31,29 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter">
-              Empowering Businesses to <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Unlock Potential</span>
+              Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Solutions.</span><br />
+              Sustainable <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Growth.</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl font-medium">
-              Zaviyar Consultant Agency partners with businesses to turn complex challenges into clear, actionable strategies that drive measurable results.
-            </p>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl font-medium"
+            >
+              {"Zaviyar Consultant Agency partners with businesses to turn complex challenges into clear, actionable strategies that drive measurable results.".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.05,
+                    delay: index * 0.02,
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.p>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
                 href="#contact"

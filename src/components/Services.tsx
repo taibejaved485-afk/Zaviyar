@@ -17,44 +17,56 @@ const services = [
   {
     icon: TrendingUp,
     title: 'Business Strategy',
-    description: 'We define goals, assess market opportunities, and develop actionable roadmaps to navigate complex market dynamics.',
+    description: 'Every successful business begins with a clear strategy. We define goals, assess market opportunities, and develop actionable roadmaps that align with your vision.',
     featured: true
   },
   {
     icon: Users,
     title: 'Management Consulting',
-    description: 'Improving leadership effectiveness and building structures that support high-performance accountability.',
+    description: 'Improving leadership effectiveness and building structures that support accountability, performance, and strong decision-making backbone.',
     featured: false
   },
   {
     icon: Settings,
     title: 'Operations Improvement',
-    description: 'Workflow redesign and resource allocation strategies that transform operational bottlenecks into efficiencies.',
+    description: 'We conduct thorough assessments of existing operations to identify bottlenecks and redesign workflows for maximum resource efficiency.',
     featured: false
   },
   {
     icon: Building2,
     title: 'Organizational Development',
-    description: 'Designing effective internal structures that evolve with your business growth and improve communication.',
+    description: 'Designing effective structures and building a culture that supports collaboration, helping organizations scale without losing cohesion.',
     featured: false
   },
   {
     icon: BarChart3,
     title: 'Financial Analysis',
-    description: 'In-depth financial modeling and analysis to identify growth opportunities and ensure sound decision-making.',
+    description: 'In-depth performance analysis to understand where your business stands, supporting smarter budgeting, forecasting, and resource planning.',
     featured: true
   },
   {
     icon: RefreshCw,
     title: 'Change Management',
-    description: 'Ensuring smooth transitions with minimal resistance and maximum team buy-in during organizational shifts.',
+    description: 'Ensuring smooth transitions with minimal resistance and maximum team buy-in during restructuring or technology adoption shifts.',
+    featured: false
+  },
+  {
+    icon: Rocket,
+    title: 'Startup Advisory',
+    description: 'Helping founders build on a solid foundation, from initial business planning and market positioning to operational setup from day one.',
+    featured: false
+  },
+  {
+    icon: Globe,
+    title: 'Market Intelligence',
+    description: 'Identifying emerging trends and competitive shifts before they impact your business, ensuring you stay ahead of the market curve.',
     featured: false
   }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 bg-white transition-colors duration-300 relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 bg-white transition-colors duration-300 relative overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-[120px] -mr-64 -mt-64" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64" />
@@ -69,7 +81,7 @@ export default function Services() {
               className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100"
             >
               <Globe size={14} className="fill-current" />
-              <span>Our Expertise</span>
+              <span>Our Services</span>
             </motion.div>
             
             <motion.h2 
@@ -78,7 +90,7 @@ export default function Services() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight"
             >
-              Tailored Solutions for <span className="text-indigo-600">Global</span> Growth
+              Comprehensive Business <span className="text-indigo-600">Guidance</span>
             </motion.h2>
           </div>
           <motion.p 
@@ -88,7 +100,7 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-600 lg:max-w-md leading-relaxed font-medium"
           >
-            We provide comprehensive consulting solutions designed to address the unique challenges organizations face at every stage of their evolution.
+            At Zaviyar Consultant Agency, we offer a range of consulting services designed to address the challenges organizations face at every stage of growth.
           </motion.p>
         </div>
 

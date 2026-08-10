@@ -34,7 +34,7 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-32 bg-white transition-colors duration-300 overflow-hidden relative">
+    <section id="faq" className="py-12 sm:py-16 bg-white transition-colors duration-300 overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-[120px] -ml-64 -mt-64 opacity-50" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -mr-64 -mb-64 opacity-50" />

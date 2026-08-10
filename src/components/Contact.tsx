@@ -80,58 +80,58 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-white transition-colors duration-300 relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 bg-white transition-colors duration-300 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[120px] -mr-64 -mt-64 opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64 opacity-50 pointer-events-none" />
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-20 xl:gap-32 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Sidebar Area */}
-          <div className="lg:w-2/5 xl:w-1/3 flex flex-col justify-between">
+          <div className="lg:col-span-5 xl:col-span-4 space-y-12">
             <div>
               <Reveal>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100">
-                <MessageSquare size={14} className="fill-current" />
-                <span>Contact Center</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-                Let's Start a <span className="text-indigo-600">Conversation</span>
-              </h2>
-              <p className="text-xl text-slate-600 mb-12 leading-relaxed font-medium">
-                Whether you have a specific challenge or simply want to explore how we can support your business, reach out today for a confidential consultation.
-              </p>
-            </Reveal>
-
-            <div className="space-y-4">
-              {[
-                { icon: Phone, label: 'Phone', value: '+92 (300) 123-4567' },
-                { icon: Mail, label: 'Email', value: 'contact@zaviyar.agency' },
-                { icon: MapPin, label: 'Office', value: 'Zaviyar Corporate Plaza, Lahore' },
-                { icon: Clock, label: 'Hours', value: 'Mon - Fri: 9:00 AM - 6:00 PM' }
-              ].map((item, idx) => (
-                <div key={idx}>
-                  <Reveal>
-                    <div className="flex items-center gap-6 p-6 rounded-3xl hover:bg-[#FCFAF8] transition-all duration-500 group border border-transparent hover:border-slate-200">
-                      <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-lg border border-slate-100 group-hover:bg-indigo-600 group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                        <item.icon size={24} />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-1">{item.label}</h4>
-                        <p className="text-lg text-slate-900 font-bold tracking-tight">{item.value}</p>
-                      </div>
-                    </div>
-                  </Reveal>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100">
+                  <MessageSquare size={14} className="fill-current" />
+                  <span>Contact Center</span>
                 </div>
-              ))}
-            </div>
-          </div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+                  Get in <span className="text-indigo-600">Touch</span>
+                </h2>
+                <p className="text-xl text-slate-600 mb-12 leading-relaxed font-medium">
+                  We would love to hear from you. Whether you have a specific challenge you are looking to solve, our team is ready to listen and help.
+                </p>
+              </Reveal>
 
-          <motion.div 
+              <div className="space-y-4">
+                {[
+                  { icon: Phone, label: 'Phone', value: '+92 (300) 123-4567' },
+                  { icon: Mail, label: 'Email', value: 'contact@zaviyar.agency' },
+                  { icon: MapPin, label: 'Office', value: 'Zaviyar Corporate Plaza, Lahore' },
+                  { icon: Clock, label: 'Hours', value: 'Mon - Fri: 9:00 AM - 6:00 PM' }
+                ].map((item, idx) => (
+                  <div key={idx}>
+                    <Reveal>
+                      <div className="flex items-center gap-6 p-5 rounded-3xl hover:bg-[#FCFAF8] transition-all duration-500 group border border-transparent hover:border-slate-100">
+                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm border border-slate-100 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+                          <item.icon size={20} />
+                        </div>
+                        <div>
+                          <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-0.5">{item.label}</h4>
+                          <p className="text-base text-slate-900 font-bold tracking-tight">{item.value}</p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-16 p-10 bg-indigo-600 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-500/25 relative overflow-hidden group"
+              className="p-10 bg-indigo-600 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-500/25 relative overflow-hidden group"
             >
               <div className="relative z-10">
                 <h3 className="text-2xl font-black mb-4 tracking-tight">Priority Support?</h3>
@@ -147,7 +147,7 @@ export default function Contact() {
           </div>
 
           {/* Form Area */}
-          <div className="lg:w-3/5 xl:w-2/3 w-full flex">
+          <div className="lg:col-span-7 xl:col-span-8">
             <Reveal className="w-full flex">
               <div className="bg-[#FCFAF8] p-10 md:p-16 rounded-[3.5rem] border border-slate-200 shadow-2xl shadow-slate-200/50 relative w-full">
                 <AnimatePresence mode="wait">

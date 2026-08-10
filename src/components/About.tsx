@@ -31,43 +31,62 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-32 bg-white overflow-hidden transition-colors duration-300 relative">
+    <section id="about" className="py-12 sm:py-16 bg-white overflow-hidden transition-colors duration-300 relative">
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-stretch mb-32">
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-indigo-600 font-black tracking-[0.3em] uppercase text-xs mb-6 block">Our Strategic Approach</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+              Unlocking <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Untapped Potential</span> in Every Business
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed font-medium">
+              At Zaviyar Consultant Agency, we believe that every business has potential waiting to be unlocked. We work alongside business owners and teams to identify opportunities, solve operational challenges, and build strategies that stand the test of time.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch mb-32">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center space-y-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 w-fit border border-indigo-100">
-              <Zap size={14} className="fill-current" />
-              <span>Our Story</span>
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase border border-indigo-100">
+                <Zap size={14} className="fill-current" />
+                <span>Our Story</span>
+              </div>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                Zaviyar Consultant Agency was founded on a simple belief: that every business deserves access to expert guidance that is honest, practical, and results-oriented. What began as a small team has grown into a trusted consulting agency known for its integrity and commitment to client success.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                Our approach combines deep industry expertise with a genuine understanding of your unique goals, ensuring every recommendation is practical and built for long-term success.
+              </p>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-              Driving Business <span className="text-indigo-600">Transformation</span> Since 2010
-            </h2>
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-medium">
-              Zaviyar Consultant Agency was founded on a simple belief: that every business deserves access to expert guidance that is honest, practical, and results-oriented. What began as a small team of dedicated professionals has grown into a trusted consulting agency known for its integrity, insight, and commitment to client success.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="p-8 bg-[#FCFAF8] rounded-3xl border border-slate-100 shadow-sm">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-md mb-6">
-                  <Target size={28} />
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
+                  <Target size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">Our Mission</h3>
-                <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                  To empower businesses with the tools, strategies, and confidence they need to thrive in an ever-changing marketplace.
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
+                <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                  To empower businesses with tools and strategies needed to thrive in an ever-changing marketplace.
                 </p>
               </div>
-              <div className="p-8 bg-[#FCFAF8] rounded-3xl border border-slate-100 shadow-sm">
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-md mb-6">
-                  <Eye size={28} />
+              <div className="p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
+                  <Eye size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">Our Vision</h3>
-                <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                  We envision a future where businesses of all sizes have access to the same caliber of strategic thinking.
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
+                <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                  A future where businesses of all sizes have access to the same caliber of strategic thinking traditionally reserved for large corporations.
                 </p>
               </div>
             </div>
@@ -78,74 +97,103 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative group w-full lg:h-full"
+            className="relative"
           >
-            {/* Video Container matching height on desktop */}
-            <div className="relative h-full aspect-square md:aspect-video lg:aspect-auto rounded-[3rem] overflow-hidden shadow-2xl shadow-indigo-500/10 border-[8px] border-white transition-all duration-500 group-hover:shadow-indigo-500/20">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
+            <div className="relative h-full aspect-[4/5] rounded-[3.5rem] overflow-hidden shadow-2xl border-[12px] border-white">
+              <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                 <source src="/about-video.mp4" type="video/mp4" />
               </video>
-              
-              {/* Cinematic Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/20 opacity-60" />
-              
-              {/* Floating Glass Stats */}
-              <div className="absolute inset-x-8 bottom-8 grid grid-cols-2 gap-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
                 {stats.slice(0, 2).map((stat, idx) => (
-                  <div key={idx} className="backdrop-blur-md bg-white/10 border border-white/20 p-6 rounded-3xl text-white shadow-xl">
-                    <stat.icon size={24} className="mb-3 text-indigo-300" />
-                    <div className="text-3xl font-black">{stat.value}</div>
-                    <div className="text-xs uppercase tracking-[0.2em] font-black opacity-80">{stat.label}</div>
+                  <div key={idx} className="backdrop-blur-md bg-white/20 border border-white/20 p-5 rounded-3xl text-white">
+                    <stat.icon size={20} className="mb-2 text-indigo-300" />
+                    <div className="text-2xl font-black">{stat.value}</div>
+                    <div className="text-[10px] uppercase tracking-widest font-black opacity-80">{stat.label}</div>
                   </div>
                 ))}
               </div>
-
-              {/* Central Play Decoration */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
-                <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/40">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-indigo-600 shadow-2xl">
-                    <Zap size={28} fill="currentColor" />
-                  </div>
-                </div>
-              </div>
             </div>
-
-            {/* Decorative background elements */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-indigo-100 rounded-full blur-3xl opacity-50" />
-            <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-100 rounded-full blur-3xl opacity-50" />
           </motion.div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center" aria-hidden="true">
-            <div className="w-full border-t border-slate-100"></div>
-          </div>
-          <div className="relative flex justify-center">
-            <span className="bg-white px-8 text-sm font-black text-slate-400 uppercase tracking-[0.3em]">Our Core Values</span>
+        <div className="grid lg:grid-cols-12 gap-12 items-center mb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100">
+              <ShieldCheck size={14} className="fill-current" />
+              <span>Why Choose Us</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight">Experience Meets <span className="text-indigo-600">Insight</span></h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+              Businesses today face constant change. Navigating this landscape requires more than good intentions; it requires experience, insight, and a trusted partner who understands the bigger picture.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+              We take the time to understand your business from the inside out, then design strategies tailored specifically to your needs, resources, and ambitions.
+            </p>
+          </motion.div>
+
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+            {values.map((v, idx) => (
+              <motion.div
+                key={v.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-300 group"
+              >
+                <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors tracking-tight">{v.title}</h4>
+                <p className="text-slate-600 text-sm leading-relaxed font-medium">{v.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-12 sm:mt-16">
-          {values.map((value, idx) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group p-8 sm:p-10 bg-[#FCFAF8] rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2 transition-all duration-500"
-            >
-              <h4 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-3 sm:mb-4 tracking-tight">{value.title}</h4>
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">{value.description}</p>
-            </motion.div>
-          ))}
+
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-32 mt-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="group p-12 bg-slate-900 rounded-[3.5rem] text-white relative overflow-hidden"
+          >
+            <div className="relative z-10">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-xl">
+                <Users size={32} />
+              </div>
+              <h3 className="text-3xl font-black mb-6 tracking-tight uppercase tracking-widest text-indigo-400">Our Team</h3>
+              <p className="text-slate-400 text-lg leading-relaxed font-medium">
+                Behind Zaviyar is a team of experienced professionals with diverse backgrounds in strategic planning and organizational development. Each member brings a wealth of knowledge and a passion for helping businesses succeed.
+              </p>
+            </div>
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="group p-12 bg-[#FCFAF8] rounded-[3.5rem] border border-slate-100 relative overflow-hidden"
+          >
+            <div className="relative z-10">
+              <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center mb-8 shadow-sm text-indigo-600">
+                <Award size={32} />
+              </div>
+              <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tight uppercase tracking-widest text-indigo-600">Why Clients Trust Us</h3>
+              <p className="text-slate-600 text-lg leading-relaxed font-medium">
+                We deliver on our promises. We take the time to understand your challenges, communicate clearly, and remain accountable for the results we help create. This dedication builds long-lasting partnerships.
+              </p>
+            </div>
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-indigo-100/50 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+          </motion.div>
         </div>
+
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

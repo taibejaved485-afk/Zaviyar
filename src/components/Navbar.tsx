@@ -49,7 +49,6 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Process', href: '#process' },
     { name: 'Services', href: '#services' },
@@ -60,8 +59,8 @@ export default function Navbar() {
     <nav className={`fixed w-full z-50 transition-all duration-500 bg-white border-b border-slate-100 ${scrolled ? 'shadow-2xl shadow-slate-200/40 py-3' : 'py-5'}`}>
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <LogoSVG className="w-12 h-12 shadow-xl rounded-2xl" />
+          <a href="#home" className="flex items-center gap-3 group outline-none">
+            <LogoSVG className="w-12 h-12 shadow-xl rounded-2xl group-hover:scale-105 transition-transform" />
             <div className="flex flex-col">
               <span className="text-xl font-black tracking-tight text-slate-900 leading-none">
                 ZAVIYAR
@@ -70,7 +69,7 @@ export default function Navbar() {
                 Consultant Agency
               </span>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-10">
