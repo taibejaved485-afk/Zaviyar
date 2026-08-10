@@ -87,9 +87,9 @@ export default function Contact() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-slate-100 to-transparent pointer-events-none" />
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
           {/* Sidebar Area */}
-          <div className="lg:col-span-5 xl:col-span-4 space-y-12">
+          <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between space-y-10">
             <div>
               <Reveal>
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100">
@@ -132,7 +132,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-10 bg-indigo-600 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-500/25 relative overflow-hidden group"
+              className="p-10 bg-indigo-600 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-500/25 relative overflow-hidden group mt-8"
             >
               <div className="relative z-10">
                 <h3 className="text-2xl font-black mb-4 tracking-tight">Priority Support?</h3>
@@ -148,9 +148,9 @@ export default function Contact() {
           </div>
 
           {/* Form Area */}
-          <div className="lg:col-span-7 xl:col-span-8">
+          <div className="lg:col-span-7 xl:col-span-8 flex">
             <Reveal className="w-full flex">
-              <div className="bg-[#FCFAF8] p-10 md:p-16 rounded-[3.5rem] border border-slate-200 shadow-2xl shadow-slate-200/50 relative w-full">
+              <div className="bg-[#FCFAF8] p-10 md:p-16 lg:p-20 rounded-[3.5rem] border border-slate-200 shadow-2xl shadow-slate-200/50 relative w-full h-full flex flex-col justify-between">
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div 
@@ -158,7 +158,7 @@ export default function Contact() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 1.1 }}
-                      className="text-center py-20"
+                      className="text-center py-20 my-auto"
                     >
                       <div className="w-28 h-28 bg-green-50 text-green-600 rounded-[2rem] flex items-center justify-center mx-auto mb-10 shadow-lg border border-green-100">
                         <CheckCircle2 size={56} />
@@ -175,81 +175,83 @@ export default function Contact() {
                       </button>
                     </motion.div>
                   ) : (
-                    <form key="form" onSubmit={handleSubmit} noValidate className="space-y-10">
-                      <div className="grid md:grid-cols-2 gap-10">
-                        <div className="space-y-3">
-                          <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
-                          <input 
-                            name="fullName"
-                            value={formData.fullName}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            type="text" 
-                            className={`w-full px-8 py-5 bg-white border ${errors.fullName ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium`}
-                            placeholder="Jane Doe"
-                          />
-                          {errors.fullName && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.fullName}</p>}
+                    <form key="form" onSubmit={handleSubmit} noValidate className="space-y-10 flex-1 flex flex-col justify-between">
+                      <div className="space-y-10">
+                        <div className="grid md:grid-cols-2 gap-10">
+                          <div className="space-y-3">
+                            <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
+                            <input 
+                              name="fullName"
+                              value={formData.fullName}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              type="text" 
+                              className={`w-full px-8 py-5 bg-white border ${errors.fullName ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium`}
+                              placeholder="Jane Doe"
+                            />
+                            {errors.fullName && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.fullName}</p>}
+                          </div>
+                          <div className="space-y-3">
+                            <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Email Address</label>
+                            <input 
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              type="email" 
+                              className={`w-full px-8 py-5 bg-white border ${errors.email ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium`}
+                              placeholder="jane@company.com"
+                            />
+                            {errors.email && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.email}</p>}
+                          </div>
                         </div>
-                        <div className="space-y-3">
-                          <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Email Address</label>
-                          <input 
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            type="email" 
-                            className={`w-full px-8 py-5 bg-white border ${errors.email ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium`}
-                            placeholder="jane@company.com"
-                          />
-                          {errors.email && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.email}</p>}
-                        </div>
-                      </div>
 
-                      <div className="grid md:grid-cols-2 gap-10">
-                        <div className="space-y-3">
-                          <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Phone (Optional)</label>
-                          <input 
-                            name="phone"
-                            value={formData.phone}
+                        <div className="grid md:grid-cols-2 gap-10">
+                          <div className="space-y-3">
+                            <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Phone (Optional)</label>
+                            <input 
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              type="tel" 
+                              className={`w-full px-8 py-5 bg-white border ${errors.phone ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium`}
+                              placeholder="+92 300 1234567"
+                            />
+                            {errors.phone && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.phone}</p>}
+                          </div>
+                          <div className="space-y-3">
+                            <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Company</label>
+                            <input 
+                              name="company"
+                              value={formData.company}
+                              onChange={handleChange}
+                              type="text" 
+                              className="w-full px-8 py-5 bg-white border border-slate-200 text-slate-900 rounded-[1.5rem] focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium"
+                              placeholder="Acme Corp"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="space-y-3 flex-1 flex flex-col">
+                          <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Message</label>
+                          <textarea 
+                            name="message"
+                            value={formData.message}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            type="tel" 
-                            className={`w-full px-8 py-5 bg-white border ${errors.phone ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium`}
-                            placeholder="+92 300 1234567"
-                          />
-                          {errors.phone && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.phone}</p>}
+                            rows={7}
+                            className={`w-full px-8 py-6 bg-white border ${errors.message ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all resize-none shadow-sm text-lg font-medium min-h-[180px]`}
+                            placeholder="How can we help you?"
+                          ></textarea>
+                          {errors.message && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.message}</p>}
                         </div>
-                        <div className="space-y-3">
-                          <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Company</label>
-                          <input 
-                            name="company"
-                            value={formData.company}
-                            onChange={handleChange}
-                            type="text" 
-                            className="w-full px-8 py-5 bg-white border border-slate-200 text-slate-900 rounded-[1.5rem] focus:ring-4 focus:ring-indigo-100 focus:border-indigo-600 outline-none transition-all shadow-sm text-lg font-medium"
-                            placeholder="Acme Corp"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-3">
-                        <label className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Message</label>
-                        <textarea 
-                          name="message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          rows={5}
-                          className={`w-full px-8 py-6 bg-white border ${errors.message ? 'border-red-500 focus:ring-red-100' : 'border-slate-200 focus:ring-indigo-100'} text-slate-900 rounded-[1.5rem] focus:ring-4 focus:border-indigo-600 outline-none transition-all resize-none shadow-sm text-lg font-medium`}
-                          placeholder="How can we help you?"
-                        ></textarea>
-                        {errors.message && <p className="text-red-500 text-sm mt-2 font-bold ml-1 uppercase tracking-wider">{errors.message}</p>}
                       </div>
 
                       <button 
                         disabled={isSubmitting}
                         type="submit" 
-                        className={`w-full py-6 rounded-[1.5rem] font-black text-xl text-white transition-all shadow-2xl flex items-center justify-center gap-4 tracking-tight ${isSubmitting ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-600/30 hover:-translate-y-1 active:scale-[0.98]'}`}
+                        className={`w-full py-6 rounded-[1.5rem] font-black text-xl text-white transition-all shadow-2xl flex items-center justify-center gap-4 tracking-tight mt-6 ${isSubmitting ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-600/30 hover:-translate-y-1 active:scale-[0.98]'}`}
                       >
                         {isSubmitting ? 'Processing Inquiry...' : 'Send Message'}
                         {!isSubmitting && <Send size={24} />}
