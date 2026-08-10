@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-white py-24 border-t border-slate-100 transition-colors duration-300">
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mb-16">
           {/* Logo & Description */}
           <div>
           <div className="flex items-center gap-3 mb-8 justify-center lg:justify-start">

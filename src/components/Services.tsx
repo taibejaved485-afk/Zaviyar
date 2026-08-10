@@ -92,7 +92,7 @@ export default function Services() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
@@ -100,7 +100,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`group p-10 rounded-[2.5rem] border transition-all duration-500 flex flex-col justify-between h-full ${
+              className={`group p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border transition-all duration-500 flex flex-col justify-between h-full ${
                 service.featured 
                 ? 'bg-[#FCFAF8] border-indigo-100 shadow-xl shadow-indigo-500/5 hover:border-indigo-500/50' 
                 : 'bg-slate-50/50 border-slate-100 hover:bg-white hover:border-slate-200 shadow-sm hover:shadow-xl'

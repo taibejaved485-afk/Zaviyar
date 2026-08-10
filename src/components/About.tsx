@@ -131,7 +131,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-12 sm:mt-16">
           {values.map((value, idx) => (
             <motion.div
               key={value.title}
@@ -139,10 +139,10 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group p-10 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2 transition-all duration-500"
+              className="group p-8 sm:p-10 bg-[#FCFAF8] rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2 transition-all duration-500"
             >
-              <h4 className="text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-4 tracking-tight">{value.title}</h4>
-              <p className="text-slate-600 text-lg leading-relaxed font-medium">{value.description}</p>
+              <h4 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-3 sm:mb-4 tracking-tight">{value.title}</h4>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">{value.description}</p>
             </motion.div>
           ))}
         </div>

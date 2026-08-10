@@ -30,10 +30,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] mb-8 tracking-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter">
               Empowering Businesses to <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Unlock Potential</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl font-medium">
               Zaviyar Consultant Agency partners with businesses to turn complex challenges into clear, actionable strategies that drive measurable results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

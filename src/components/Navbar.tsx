@@ -73,7 +73,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {!isSearchOpen ? (
               <div className="flex items-center gap-8">
                 {navLinks.map((link, idx) => (
@@ -83,7 +83,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: idx * 0.1 }}
-                    className="text-sm font-black uppercase tracking-widest text-slate-600 hover:text-indigo-600 transition-colors"
+                    className="text-xs lg:text-sm font-black uppercase tracking-widest text-slate-600 hover:text-indigo-600 transition-colors"
                   >
                     {link.name}
                   </motion.a>
@@ -168,7 +168,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4">
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="p-3 bg-slate-50 text-slate-900 rounded-2xl"
@@ -186,7 +186,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-slate-100 overflow-hidden"
+            className="lg:hidden bg-white border-b border-slate-100 overflow-hidden"
           >
             <div className="px-4 py-8 space-y-6">
               <div className="relative mb-8">

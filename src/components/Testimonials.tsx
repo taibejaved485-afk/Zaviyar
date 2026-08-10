@@ -64,9 +64,9 @@ export default function Testimonials() {
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="bg-white p-12 md:p-20 rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+          <div className="bg-white p-8 sm:p-12 md:p-20 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
             {/* Massive Background Quote Icon */}
-            <Quote className="absolute -top-10 -left-10 w-64 h-64 text-indigo-50 opacity-20 pointer-events-none" />
+            <Quote className="absolute -top-10 -left-10 w-48 h-48 sm:w-64 sm:h-64 text-indigo-50 opacity-20 pointer-events-none" />
             
             <AnimatePresence mode="wait">
               <motion.div
@@ -77,43 +77,43 @@ export default function Testimonials() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10"
               >
-                <div className="flex justify-center mb-10">
-                  <div className="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-500/20">
-                    <Quote size={32} fill="currentColor" />
+                <div className="flex justify-center mb-8 sm:mb-10">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-500/20">
+                    <Quote size={24} className="sm:w-8 sm:h-8" fill="currentColor" />
                   </div>
                 </div>
                 
-                <blockquote className="text-2xl md:text-3xl lg:text-4xl text-slate-900 font-bold leading-tight mb-12 italic text-center tracking-tight">
+                <blockquote className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-slate-900 font-bold leading-tight mb-8 sm:mb-12 italic text-center tracking-tight px-4 sm:px-0">
                   "{testimonials[current].quote}"
                 </blockquote>
                 
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-px bg-indigo-200 mb-8" />
-                  <h4 className="text-xl lg:text-2xl font-black text-slate-900 mb-2 tracking-tight">
+                  <div className="w-12 h-px bg-indigo-200 mb-6 sm:mb-8" />
+                  <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 mb-2 tracking-tight">
                     {testimonials[current].author}
                   </h4>
-                  <p className="text-lg text-indigo-600 font-black uppercase tracking-widest text-sm">
-                    {testimonials[current].role} — {testimonials[current].company}
+                  <p className="text-xs sm:text-sm lg:text-base text-indigo-600 font-black uppercase tracking-widest text-center">
+                    {testimonials[current].role} <br className="sm:hidden" /> — {testimonials[current].company}
                   </p>
                 </div>
               </motion.div>
             </AnimatePresence>
 
             {/* Navigation Buttons inside the card */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+            <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 sm:left-4 sm:right-4 flex justify-between pointer-events-none">
               <button
                 onClick={prev}
-                className="p-4 bg-white rounded-2xl shadow-xl text-slate-400 hover:text-indigo-600 transition-all border border-slate-100 pointer-events-auto hover:-translate-x-1"
+                className="p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl text-slate-400 hover:text-indigo-600 transition-all border border-slate-100 pointer-events-auto hover:-translate-x-1"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
               </button>
               <button
                 onClick={next}
-                className="p-4 bg-white rounded-2xl shadow-xl text-slate-400 hover:text-indigo-600 transition-all border border-slate-100 pointer-events-auto hover:translate-x-1"
+                className="p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl text-slate-400 hover:text-indigo-600 transition-all border border-slate-100 pointer-events-auto hover:translate-x-1"
                 aria-label="Next testimonial"
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={20} className="sm:w-6 sm:h-6" />
               </button>
             </div>
           </div>

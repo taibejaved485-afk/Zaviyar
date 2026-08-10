@@ -75,7 +75,7 @@ export default function Process() {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 relative">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 relative">
           {/* Connector line for desktop */}
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-slate-200 -translate-y-1/2 z-0" />
           
@@ -88,7 +88,7 @@ export default function Process() {
               transition={{ delay: idx * 0.1, duration: 0.8 }}
               className="relative z-10 group"
             >
-              <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col h-full overflow-hidden group-hover:-translate-y-4">
+              <div className="bg-white p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col h-full overflow-hidden group-hover:-translate-y-4">
                 {/* Step Number Background - Made more visible */}
                 <div className="absolute right-4 top-4 text-8xl font-black text-slate-200/80 select-none pointer-events-none group-hover:text-indigo-500/20 transition-colors duration-500 leading-none">
                   0{idx + 1}
