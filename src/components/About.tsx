@@ -56,13 +56,13 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch mb-32">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-32">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col justify-center space-y-8"
+            className="flex flex-col justify-between space-y-6 h-full"
           >
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase border border-indigo-100">
@@ -77,7 +77,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
               <div className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
                 {/* Rotating Glowing Dot Border on Hover */}
                 <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
@@ -124,14 +124,14 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            className="relative h-full min-h-[480px] flex"
           >
-            <div className="relative h-full aspect-[4/5] rounded-[3.5rem] overflow-hidden shadow-2xl border-[12px] border-white">
+            <div className="relative w-full h-full min-h-full rounded-[3.5rem] overflow-hidden shadow-2xl border-[12px] border-white flex flex-col justify-end">
               <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                 <source src="/about-video.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
+              <div className="relative z-10 p-6 sm:p-8 grid grid-cols-2 gap-4">
                 {stats.slice(0, 2).map((stat, idx) => (
                   <div key={idx} className="backdrop-blur-md bg-white/20 border border-white/20 p-5 rounded-3xl text-white">
                     <stat.icon size={20} className="mb-2 text-indigo-300" />
