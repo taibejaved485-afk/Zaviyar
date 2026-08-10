@@ -1,7 +1,44 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'motion/react';
 import { Target, Eye, ShieldCheck, Zap, Award, Users, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Value } from '../types';
+
+function TypewriterText({ text }: { text: string }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDone, setIsDone] = useState(false);
+
+  useEffect(() => {
+    if (isInView) {
+      let currentIndex = 0;
+      const interval = setInterval(() => {
+        if (currentIndex < text.length) {
+          setDisplayedText(text.substring(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          setIsDone(true);
+          clearInterval(interval);
+        }
+      }, 20);
+
+      return () => clearInterval(interval);
+    }
+  }, [isInView, text]);
+
+  return (
+    <p ref={ref} className="text-xl text-slate-600 leading-relaxed font-medium min-h-[5rem]">
+      {displayedText}
+      {!isDone && (
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
+          className="inline-block w-0.5 h-5 bg-indigo-600 ml-1 translate-y-0.5 align-middle"
+        />
+      )}
+    </p>
+  );
+}
 
 const values: Value[] = [
   {
@@ -50,9 +87,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
               Unlocking <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Untapped Potential</span> in Every Business
             </h2>
-            <p className="text-xl text-slate-600 leading-relaxed font-medium">
-              At Zaviyar Consultant Agency, we believe that every business has potential waiting to be unlocked. We work alongside business owners and teams to identify opportunities, solve operational challenges, and build strategies that stand the test of time.
-            </p>
+            <TypewriterText text="At Zaviyar Consultant Agency, we believe that every business has potential waiting to be unlocked. We work alongside business owners and teams to identify opportunities, solve operational challenges, and build strategies that stand the test of time." />
           </motion.div>
         </div>
 
