@@ -119,9 +119,12 @@ export default function Services() {
                 </p>
               </div>
               
-              <div className="pt-6 border-t border-slate-100 flex items-center gap-4">
+              <a 
+                href="#contact"
+                className="pt-6 border-t border-slate-100 flex items-center gap-4 group/btn"
+              >
                 <span className="text-sm font-black text-indigo-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">Learn More</span>
-              </div>
+              </a>
             </motion.div>
           ))}
           
@@ -140,12 +143,12 @@ export default function Services() {
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-4 shrink-0">
-                <div className="px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black transition-all hover:-translate-y-1 shadow-xl shadow-indigo-500/25 cursor-pointer">
+                <a href="#contact" className="px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black transition-all hover:-translate-y-1 shadow-xl shadow-indigo-500/25 text-center">
                   Book a Consultation
-                </div>
-                <div className="px-10 py-5 bg-slate-50 hover:bg-slate-100 text-slate-900 border border-slate-200 rounded-2xl font-black transition-all hover:-translate-y-1 cursor-pointer">
+                </a>
+                <a href="#contact" className="px-10 py-5 bg-slate-50 hover:bg-slate-100 text-slate-900 border border-slate-200 rounded-2xl font-black transition-all hover:-translate-y-1 text-center">
                   View Full Brochure
-                </div>
+                </a>
               </div>
             </div>
           </motion.div>

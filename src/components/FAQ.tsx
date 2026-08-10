@@ -131,12 +131,12 @@ export default function FAQ() {
           <h3 className="text-3xl lg:text-4xl font-black mb-4 tracking-tight">Still have questions?</h3>
           <p className="text-indigo-100 text-lg mb-10 font-medium">We're here to help you navigate your journey.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-10 py-4 bg-white text-indigo-600 rounded-2xl font-black hover:-translate-y-1 transition-all shadow-xl">
+            <a href="#contact" className="px-10 py-4 bg-white text-indigo-600 rounded-2xl font-black hover:-translate-y-1 transition-all shadow-xl text-center">
               Contact Support
-            </button>
-            <button className="px-10 py-4 bg-indigo-500 text-white border border-indigo-400 rounded-2xl font-black hover:-translate-y-1 transition-all">
+            </a>
+            <a href="#contact" className="px-10 py-4 bg-indigo-500 text-white border border-indigo-400 rounded-2xl font-black hover:-translate-y-1 transition-all text-center">
               Book a Demo
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

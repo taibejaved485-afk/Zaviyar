@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Target, Eye, ShieldCheck, Zap, Award, Users, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Target, Eye, ShieldCheck, Zap, Award, Users, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Value } from '../types';
 
 const values: Value[] = [
@@ -146,6 +146,19 @@ export default function About() {
             </motion.div>
           ))}
         </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <a 
+            href="#contact" 
+            className="inline-flex items-center gap-3 px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-indigo-700 transition-all shadow-2xl shadow-indigo-600/30 hover:-translate-y-1 active:scale-95"
+          >
+            Start Your Transformation <ArrowRight size={20} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
