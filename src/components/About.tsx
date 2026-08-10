@@ -78,25 +78,45 @@ export default function About() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
-                  <Target size={24} />
+              <div className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
+                {/* Rotating Glowing Dot Border on Hover */}
+                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[2.35rem] transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                  To empower businesses with tools and strategies needed to thrive in an ever-changing marketplace.
-                </p>
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
+                    <Target size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                    To empower businesses with tools and strategies needed to thrive in an ever-changing marketplace.
+                  </p>
+                </div>
               </div>
-              <div className="p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
-                  <Eye size={24} />
+
+              <div className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
+                {/* Rotating Glowing Dot Border on Hover */}
+                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[2.35rem] transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                  A future where businesses of all sizes have access to the same caliber of strategic thinking traditionally reserved for large corporations.
-                </p>
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
+                    <Eye size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                    A future where businesses of all sizes have access to the same caliber of strategic thinking traditionally reserved for large corporations.
+                  </p>
+                </div>
               </div>
             </div>
+
           </motion.div>
 
           <motion.div
@@ -152,13 +172,23 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-300 group"
+                className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 group overflow-hidden"
               >
-                <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors tracking-tight">{v.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">{v.description}</p>
+                {/* Rotating Glowing Dot Border on Hover */}
+                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[2.35rem] transition-colors duration-300" />
+                </div>
+
+                <div className="relative z-10">
+                  <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors tracking-tight">{v.title}</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{v.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
+
         </div>
 
 
@@ -170,6 +200,13 @@ export default function About() {
             viewport={{ once: true }}
             className="group p-10 lg:p-14 bg-slate-900 rounded-[4rem] text-white relative overflow-hidden flex flex-col justify-between"
           >
+            {/* Rotating Glowing Dot Border on Hover */}
+            <div className="absolute inset-0 rounded-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#818cf8_335deg,#c084fc_352deg,#ffffff_360deg)] blur-md opacity-90" />
+              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#818cf8_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+              <div className="absolute inset-[2px] bg-slate-900 rounded-[3.85rem]" />
+            </div>
+
             <div className="relative z-10">
               <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-10 shadow-2xl shadow-indigo-600/20">
                 <Users size={32} />
@@ -189,6 +226,13 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="group p-10 lg:p-14 bg-[#FCFAF8] rounded-[4rem] border border-slate-100 relative overflow-hidden flex flex-col justify-between"
           >
+            {/* Rotating Glowing Dot Border on Hover */}
+            <div className="absolute inset-0 rounded-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
+              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+              <div className="absolute inset-[2px] bg-[#FCFAF8] rounded-[3.85rem]" />
+            </div>
+
             <div className="relative z-10">
               <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center mb-10 shadow-sm text-indigo-600">
                 <Award size={32} />
@@ -201,6 +245,7 @@ export default function About() {
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-100/50 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
           </motion.div>
         </div>
+
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

@@ -112,33 +112,43 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`group p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border transition-all duration-500 flex flex-col justify-between h-full ${
+              className={`relative group p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border transition-all duration-500 flex flex-col justify-between h-full overflow-hidden ${
                 service.featured 
-                ? 'bg-[#FCFAF8] border-indigo-100 shadow-xl shadow-indigo-500/5 hover:border-indigo-500/50' 
-                : 'bg-slate-50/50 border-slate-100 hover:bg-white hover:border-slate-200 shadow-sm hover:shadow-xl'
+                ? 'bg-[#FCFAF8] border-indigo-100 shadow-xl shadow-indigo-500/5' 
+                : 'bg-slate-50/50 border-slate-100 hover:bg-white shadow-sm hover:shadow-2xl'
               }`}
             >
-              <div>
-                <div className="flex justify-between items-start mb-8">
-                  <div className="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-indigo-500/20">
-                    <service.icon size={28} />
-                  </div>
-                  <ArrowRight size={20} className="text-slate-400 group-hover:text-indigo-600 transition-all -rotate-45 group-hover:rotate-0" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900 tracking-tight">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-lg font-medium mb-8">
-                  {service.description}
-                </p>
+              {/* Rotating Glowing Dot Border on Hover */}
+              <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
+                <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+                <div className="absolute inset-[2px] bg-white rounded-[2.35rem] transition-colors duration-300" />
               </div>
-              
-              <a 
-                href="#contact"
-                className="pt-6 border-t border-slate-100 flex items-center gap-4 group/btn"
-              >
-                <span className="text-sm font-black text-indigo-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">Learn More</span>
-              </a>
+
+              <div className="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex justify-between items-start mb-8">
+                    <div className="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-indigo-500/20">
+                      <service.icon size={28} />
+                    </div>
+                    <ArrowRight size={20} className="text-slate-400 group-hover:text-indigo-600 transition-all -rotate-45 group-hover:rotate-0" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900 tracking-tight">{service.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-lg font-medium mb-8">
+                    {service.description}
+                  </p>
+                </div>
+                
+                <a 
+                  href="#contact"
+                  className="pt-6 border-t border-slate-100 flex items-center gap-4 group/btn"
+                >
+                  <span className="text-sm font-black text-indigo-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">Learn More</span>
+                </a>
+              </div>
             </motion.div>
           ))}
+
           
           {/* Custom Stats Card */}
           <motion.div

@@ -88,7 +88,14 @@ export default function Process() {
               transition={{ delay: idx * 0.1, duration: 0.8 }}
               className="relative z-10 group"
             >
-              <div className="bg-white p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col h-full overflow-hidden group-hover:-translate-y-4">
+              <div className="relative bg-white p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col h-full overflow-hidden group-hover:-translate-y-4">
+                {/* Rotating Glowing Dot Border on Hover */}
+                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
+                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
+                  <div className="absolute inset-[2px] bg-white rounded-[2.35rem] transition-colors duration-300" />
+                </div>
+
                 {/* Step Number Background - Made more visible */}
                 <div className="absolute right-4 top-4 text-8xl font-black text-slate-200/80 select-none pointer-events-none group-hover:text-indigo-500/20 transition-colors duration-500 leading-none">
                   0{idx + 1}
