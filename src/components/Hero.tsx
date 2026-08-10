@@ -6,18 +6,21 @@ export default function Hero() {
   return (
     <section id="home" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-900 transition-colors duration-300 min-h-[90vh] flex items-center">
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-100"
+          className="w-full h-full object-cover scale-105"
+          style={{ opacity: 1 }}
         >
           <source src="/hero-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
-        {/* Overlay for better contrast */}
-        <div className="absolute inset-0 bg-slate-900/40" />
+        {/* Advanced Overlay */}
+        <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/80" />
       </div>
 
       <div className="w-full px-4 sm:px-8 lg:px-12 relative z-10">

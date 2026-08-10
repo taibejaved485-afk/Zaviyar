@@ -4,9 +4,10 @@ import { motion, useInView, useAnimation } from 'motion/react';
 interface Props {
   children: React.ReactNode;
   width?: 'fit-content' | '100%';
+  className?: string;
 }
 
-export const Reveal = ({ children, width = '100%' }: Props) => {
+export const Reveal = ({ children, width = '100%', className = '' }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const mainControls = useAnimation();
@@ -18,7 +19,7 @@ export const Reveal = ({ children, width = '100%' }: Props) => {
   }, [isInView, mainControls]);
 
   return (
-    <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
+    <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }} className={className}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
