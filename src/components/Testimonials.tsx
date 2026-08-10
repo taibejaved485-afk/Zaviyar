@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, MessageSquareQuote } from 'lucide-react';
 import { Testimonial } from '../types';
 
 const testimonials: Testimonial[] = [
@@ -36,62 +36,98 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800 overflow-hidden transition-colors duration-300">
-      <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">Client Success Stories</h2>
-          <div className="w-16 h-1 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+    <section className="py-32 bg-[#FCFAF8] transition-colors duration-300 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[120px] -mr-64 -mt-64 opacity-50" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64 opacity-50" />
+
+      <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100"
+          >
+            <MessageSquareQuote size={14} className="fill-current" />
+            <span>Success Stories</span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 tracking-tight"
+          >
+            Client <span className="text-indigo-600">Success Stories</span>
+          </motion.h2>
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-12">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="text-center"
-            >
-              <div className="flex justify-center mb-8">
-                <Quote className="text-indigo-200 dark:text-indigo-900/30 w-16 h-16 fill-indigo-50 dark:fill-indigo-900/10" />
-              </div>
-              <p className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 italic leading-relaxed mb-10">
-                "{testimonials[current].quote}"
-              </p>
-              <div>
-                <h4 className="text-lg font-bold text-slate-900 dark:text-white">{testimonials[current].author}</h4>
-                <p className="text-indigo-600 dark:text-indigo-400 font-medium">
-                  {testimonials[current].role}, {testimonials[current].company}
-                </p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="bg-white p-12 md:p-20 rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+            {/* Massive Background Quote Icon */}
+            <Quote className="absolute -top-10 -left-10 w-64 h-64 text-indigo-50 opacity-20 pointer-events-none" />
+            
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative z-10"
+              >
+                <div className="flex justify-center mb-10">
+                  <div className="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-500/20">
+                    <Quote size={32} fill="currentColor" />
+                  </div>
+                </div>
+                
+                <blockquote className="text-2xl md:text-3xl lg:text-4xl text-slate-900 font-bold leading-tight mb-12 italic text-center tracking-tight">
+                  "{testimonials[current].quote}"
+                </blockquote>
+                
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-px bg-indigo-200 mb-8" />
+                  <h4 className="text-xl lg:text-2xl font-black text-slate-900 mb-2 tracking-tight">
+                    {testimonials[current].author}
+                  </h4>
+                  <p className="text-lg text-indigo-600 font-black uppercase tracking-widest text-sm">
+                    {testimonials[current].role} — {testimonials[current].company}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
-          {/* Controls */}
-          <button
-            onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors border border-slate-100 dark:border-slate-700 focus:outline-none"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg text-slate-400 dark:text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors border border-slate-100 dark:border-slate-700 focus:outline-none"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={24} />
-          </button>
+            {/* Navigation Buttons inside the card */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+              <button
+                onClick={prev}
+                className="p-4 bg-white rounded-2xl shadow-xl text-slate-400 hover:text-indigo-600 transition-all border border-slate-100 pointer-events-auto hover:-translate-x-1"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={next}
+                className="p-4 bg-white rounded-2xl shadow-xl text-slate-400 hover:text-indigo-600 transition-all border border-slate-100 pointer-events-auto hover:translate-x-1"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-12">
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-3 mt-12">
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrent(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  current === idx ? 'w-8 bg-indigo-600' : 'bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600'
+                className={`transition-all duration-500 rounded-full ${
+                  current === idx 
+                  ? 'w-12 h-3 bg-indigo-600' 
+                  : 'w-3 h-3 bg-slate-200 hover:bg-slate-300'
                 }`}
                 aria-label={`Go to testimonial ${idx + 1}`}
               />

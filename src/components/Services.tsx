@@ -7,72 +7,92 @@ import {
   Building2, 
   BarChart3, 
   RefreshCw, 
-  Rocket 
+  Rocket,
+  ArrowRight,
+  Globe,
+  ShieldCheck
 } from 'lucide-react';
 
 const services = [
   {
-    icon: <TrendingUp size={32} />,
+    icon: TrendingUp,
     title: 'Business Strategy',
-    description: 'Every successful business begins with a clear strategy. We work closely with leadership teams to define goals, assess market opportunities, and develop actionable roadmaps.'
+    description: 'We define goals, assess market opportunities, and develop actionable roadmaps to navigate complex market dynamics.',
+    featured: true
   },
   {
-    icon: <Users size={32} />,
+    icon: Users,
     title: 'Management Consulting',
-    description: 'Strong management is the backbone of any organization. We focus on improving leadership effectiveness and building structures that support accountability.'
+    description: 'Improving leadership effectiveness and building structures that support high-performance accountability.',
+    featured: false
   },
   {
-    icon: <Settings size={32} />,
+    icon: Settings,
     title: 'Operations Improvement',
-    description: 'We conduct thorough assessments to identify bottlenecks. From workflow redesign to resource allocation, our recommendations are practical and efficient.'
+    description: 'Workflow redesign and resource allocation strategies that transform operational bottlenecks into efficiencies.',
+    featured: false
   },
   {
-    icon: <Building2 size={32} />,
+    icon: Building2,
     title: 'Organizational Development',
-    description: 'As businesses grow, internal structures must evolve. We assist in designing effective structures and improving internal communication.'
+    description: 'Designing effective internal structures that evolve with your business growth and improve communication.',
+    featured: false
   },
   {
-    icon: <BarChart3 size={32} />,
+    icon: BarChart3,
     title: 'Financial Analysis',
-    description: 'Sound decisions require reliable data. We provide in-depth financial analysis to help you understand where your business stands and where opportunities lie.'
+    description: 'In-depth financial modeling and analysis to identify growth opportunities and ensure sound decision-making.',
+    featured: true
   },
   {
-    icon: <RefreshCw size={32} />,
+    icon: RefreshCw,
     title: 'Change Management',
-    description: 'Change is inevitable, but not disruptive. We help ensure smooth transitions with minimal resistance and maximum buy-in from your team.'
-  },
-  {
-    icon: <Rocket size={32} />,
-    title: 'Startup Advisory',
-    description: 'Early decisions shape future success. We offer dedicated advisory for startups, from business planning to operational setup.'
+    description: 'Ensuring smooth transitions with minimal resistance and maximum team buy-in during organizational shifts.',
+    featured: false
   }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-slate-900 dark:bg-slate-950 text-white transition-colors duration-300">
-      <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold mb-6 text-white"
-          >
-            Our Services
-          </motion.h2>
+    <section id="services" className="py-32 bg-white transition-colors duration-300 relative overflow-hidden">
+      {/* Abstract background elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-[120px] -mr-64 -mt-64" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64" />
+
+      <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100"
+            >
+              <Globe size={14} className="fill-current" />
+              <span>Our Expertise</span>
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight tracking-tight"
+            >
+              Tailored Solutions for <span className="text-indigo-600">Global</span> Growth
+            </motion.h2>
+          </div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-400 dark:text-slate-500 max-w-2xl mx-auto"
+            className="text-xl text-slate-600 lg:max-w-md leading-relaxed font-medium"
           >
-            Comprehensive consulting solutions designed to address the challenges organizations face at every stage of growth.
+            We provide comprehensive consulting solutions designed to address the unique challenges organizations face at every stage of their evolution.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
@@ -80,33 +100,53 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 bg-slate-800/50 dark:bg-slate-900/50 rounded-2xl border border-slate-700/50 dark:border-slate-800 hover:border-indigo-500/50 transition-all hover:-translate-y-1 group"
+              className={`group p-10 rounded-[2.5rem] border transition-all duration-500 flex flex-col justify-between h-full ${
+                service.featured 
+                ? 'bg-[#FCFAF8] border-indigo-100 shadow-xl shadow-indigo-500/5 hover:border-indigo-500/50' 
+                : 'bg-slate-50/50 border-slate-100 hover:bg-white hover:border-slate-200 shadow-sm hover:shadow-xl'
+              }`}
             >
-              <div className="text-indigo-400 dark:text-indigo-500 mb-6 group-hover:text-indigo-300 transition-colors">
-                {service.icon}
+              <div>
+                <div className="flex justify-between items-start mb-8">
+                  <div className="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-indigo-500/20">
+                    <service.icon size={28} />
+                  </div>
+                  <ArrowRight size={20} className="text-slate-400 group-hover:text-indigo-600 transition-all -rotate-45 group-hover:rotate-0" />
+                </div>
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900 tracking-tight">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-lg font-medium mb-8">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
-              <p className="text-slate-400 dark:text-slate-500 leading-relaxed text-sm">
-                {service.description}
-              </p>
+              
+              <div className="pt-6 border-t border-slate-100 flex items-center gap-4">
+                <span className="text-sm font-black text-indigo-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">Learn More</span>
+              </div>
             </motion.div>
           ))}
           
-          {/* Approach Card */}
+          {/* Custom Stats Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 p-8 bg-indigo-600 dark:bg-indigo-700 rounded-3xl flex flex-col md:flex-row items-center gap-8 shadow-2xl shadow-indigo-600/20 dark:shadow-none"
+            className="lg:col-span-3 mt-8 p-1 rounded-[3rem] bg-indigo-600 shadow-2xl shadow-indigo-500/20"
           >
-            <div className="md:w-1/3 text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">Our Approach</h3>
-              <p className="text-indigo-100 text-sm">Beyond recommendations—we stay engaged until results are achieved.</p>
-            </div>
-            <div className="md:w-2/3">
-              <p className="text-indigo-50 leading-relaxed text-sm">
-                Every engagement begins with a thorough understanding of your business and objectives. We develop customized strategies, work collaboratively throughout implementation, and provide ongoing support to ensure lasting impact.
-              </p>
+            <div className="bg-white rounded-[2.9rem] p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="flex-1 text-center lg:text-left">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-slate-900 tracking-tight">Need a custom strategic blueprint?</h3>
+                <p className="text-slate-600 text-xl leading-relaxed max-w-xl font-medium">
+                  Our specialists work alongside your team to build resilient, high-growth organizations. Let's discuss your specific goals.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-4 shrink-0">
+                <div className="px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black transition-all hover:-translate-y-1 shadow-xl shadow-indigo-500/25 cursor-pointer">
+                  Book a Consultation
+                </div>
+                <div className="px-10 py-5 bg-slate-50 hover:bg-slate-100 text-slate-900 border border-slate-200 rounded-2xl font-black transition-all hover:-translate-y-1 cursor-pointer">
+                  View Full Brochure
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

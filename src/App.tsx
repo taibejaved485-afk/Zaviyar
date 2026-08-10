@@ -26,10 +26,10 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Stats />
         <Reveal>
           <About />
         </Reveal>
+        <Stats />
         <Reveal>
           <Commitment />
         </Reveal>
