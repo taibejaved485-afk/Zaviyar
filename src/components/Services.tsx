@@ -108,18 +108,23 @@ export default function Services() {
           </motion.p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 perspective-1000">
           {services.map((service, idx) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.015,
+                transition: { type: "spring", stiffness: 400, damping: 25 } 
+              }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className={`relative group p-6 sm:p-7 rounded-2xl border transition-all duration-500 flex flex-col justify-between h-full overflow-hidden ${
+              transition={{ delay: idx * 0.08 }}
+              className={`relative group p-6 sm:p-7 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-full overflow-hidden transform-gpu ${
                 service.featured 
-                ? 'bg-[#FCFAF8] border-indigo-100 shadow-xl shadow-indigo-500/5' 
-                : 'bg-slate-50/50 border-slate-100 hover:bg-white shadow-sm hover:shadow-xl'
+                ? 'bg-[#FCFAF8] border-indigo-200 shadow-lg shadow-indigo-500/10 hover:shadow-[0_20px_40px_rgba(99,102,241,0.18)] hover:border-indigo-400' 
+                : 'bg-slate-50/50 border-slate-200/80 hover:bg-white shadow-xs hover:shadow-[0_20px_40px_rgba(15,23,42,0.08)] hover:border-indigo-300'
               }`}
             >
               {/* Rotating Glowing Dot Border on Hover */}
@@ -129,15 +134,20 @@ export default function Services() {
                 <div className="absolute inset-[2px] bg-white rounded-[0.9rem] transition-colors duration-300" />
               </div>
 
+              {/* Subtle top light gradient glow on hover */}
+              <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
               <div className="relative z-10 flex flex-col justify-between h-full">
                 <div>
                   <div className="flex justify-between items-start mb-5">
-                    <div className="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-105 shadow-md shadow-indigo-500/20">
+                    <div className="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 shadow-md shadow-indigo-500/20 group-hover:shadow-indigo-500/40">
                       <service.icon size={22} />
                     </div>
-                    <ArrowRight size={18} className="text-slate-400 group-hover:text-indigo-600 transition-all -rotate-45 group-hover:rotate-0" />
+                    <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-indigo-50 flex items-center justify-center transition-colors duration-300">
+                      <ArrowRight size={16} className="text-slate-400 group-hover:text-indigo-600 transition-all duration-300 -rotate-45 group-hover:rotate-0 group-hover:scale-110" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-slate-900 tracking-tight">{service.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors duration-300">{service.title}</h3>
                   <p className="text-slate-600 leading-relaxed text-sm font-normal mb-5">
                     {service.description}
                   </p>
@@ -145,9 +155,10 @@ export default function Services() {
                 
                 <a 
                   href="#contact"
-                  className="pt-4 border-t border-slate-100 flex items-center gap-2 group/btn"
+                  className="pt-4 border-t border-slate-100 group-hover:border-indigo-100/60 flex items-center gap-2 group/btn transition-colors duration-300"
                 >
-                  <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all transform translate-x-2 group-hover:translate-x-0">Learn More</span>
+                  <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">Explore Service</span>
+                  <ArrowRight size={13} className="text-indigo-600 opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" />
                 </a>
               </div>
             </motion.div>
