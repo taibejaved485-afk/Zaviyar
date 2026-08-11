@@ -80,7 +80,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-white transition-colors duration-300 relative overflow-hidden">
+    <section id="contact" className="py-10 sm:py-14 bg-white transition-colors duration-300 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-50 rounded-full blur-[150px] -mr-64 -mt-64 opacity-60 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64 opacity-50 pointer-events-none" />

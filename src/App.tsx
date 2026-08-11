@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import { Reveal } from './components/Reveal';
 import BackToTop from './components/BackToTop';
 import ScrollProgress from './components/ScrollProgress';
+import SectionDivider from './components/SectionDivider';
 
 export default function App() {
   return (
@@ -26,25 +27,49 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        
+        <SectionDivider variant="glow" icon="sparkles" title="About Zaviyar" />
+        
         <Reveal>
           <About />
         </Reveal>
+        
+        <SectionDivider variant="badge" icon="award" title="Key Highlights" />
+        
         <Stats />
+        
+        <SectionDivider variant="dots" />
+        
         <Reveal>
           <Commitment />
         </Reveal>
+        
+        <SectionDivider variant="gradient-bar" icon="compass" title="Our Proven Roadmap" />
+        
         <Reveal>
           <Process />
         </Reveal>
+        
+        <SectionDivider variant="glow" icon="star" title="Client Experience" />
+        
         <Reveal>
           <Testimonials />
         </Reveal>
+        
+        <SectionDivider variant="badge" icon="layers" title="Core Solutions" />
+        
         <Reveal>
           <Services />
         </Reveal>
+        
+        <SectionDivider variant="gradient-bar" icon="hexagon" title="Help & Support" />
+        
         <Reveal>
           <FAQ />
         </Reveal>
+        
+        <SectionDivider variant="glow" icon="diamond" title="Let's Connect" />
+        
         <Contact />
       </main>
       <Footer />
@@ -52,3 +77,4 @@ export default function App() {
     </div>
   );
 }
+

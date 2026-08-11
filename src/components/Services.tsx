@@ -66,13 +66,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-12 sm:py-16 bg-white transition-colors duration-300 relative overflow-hidden">
+    <section id="services" className="py-8 sm:py-12 bg-white transition-colors duration-300 relative overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-50 rounded-full blur-[120px] -mr-64 -mt-64" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] -ml-64 -mb-64" />
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-8">
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

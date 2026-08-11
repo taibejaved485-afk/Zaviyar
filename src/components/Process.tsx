@@ -35,7 +35,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-12 sm:py-16 bg-[#FCFAF8] transition-colors duration-300 overflow-hidden relative">
+    <section id="process" className="py-8 sm:py-12 bg-[#FCFAF8] transition-colors duration-300 overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-indigo-200 rounded-full blur-[120px]" />
@@ -43,7 +43,7 @@ export default function Process() {
       </div>
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="text-center mb-24">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}

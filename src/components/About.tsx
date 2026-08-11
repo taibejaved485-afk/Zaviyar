@@ -68,7 +68,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-white overflow-hidden transition-colors duration-300 relative">
+    <section id="about" className="py-10 sm:py-16 bg-white overflow-hidden transition-colors duration-300 relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-60" />
@@ -77,7 +77,7 @@ export default function About() {
       </div>
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-24">
+        <div className="max-w-4xl mx-auto text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-32">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-16">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -179,7 +179,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-center mb-32">
+        <div className="grid lg:grid-cols-12 gap-12 items-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,7 @@ export default function About() {
 
 
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mb-32 mt-32">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mb-16 mt-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -286,7 +286,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-12 text-center"
         >
           <a 
             href="#contact" 

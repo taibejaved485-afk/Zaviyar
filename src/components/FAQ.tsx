@@ -34,13 +34,13 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 sm:py-32 bg-white transition-colors duration-300 overflow-hidden relative">
+    <section id="faq" className="py-10 sm:py-14 bg-white transition-colors duration-300 overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-indigo-50 rounded-full blur-[150px] -ml-64 -mt-64 opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[150px] -mr-64 -mb-64 opacity-50 pointer-events-none" />
 
       <div className="max-w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="text-center mb-20 max-w-4xl mx-auto">
+        <div className="text-center mb-10 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -126,7 +126,7 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 text-center p-12 lg:p-16 bg-indigo-600 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-500/20 w-full relative overflow-hidden group"
+          className="mt-10 text-center p-10 lg:p-14 bg-indigo-600 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-500/20 w-full relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
           <div className="relative z-10">
