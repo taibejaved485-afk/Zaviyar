@@ -29,7 +29,7 @@ export default function SectionDivider({
 
   if (variant === 'gradient-bar') {
     return (
-      <div className={`relative py-8 sm:py-12 lg:py-16 my-2 flex items-center justify-center overflow-hidden ${bgClass}`}>
+      <div className={`relative py-2 sm:py-3 flex items-center justify-center overflow-hidden ${bgClass}`}>
         <div className="w-full max-w-7xl px-4 sm:px-8 flex items-center gap-4">
           <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-indigo-400/40 to-indigo-600" />
           <motion.div
@@ -53,7 +53,7 @@ export default function SectionDivider({
 
   if (variant === 'dots') {
     return (
-      <div className={`relative py-8 sm:py-12 lg:py-16 my-2 flex items-center justify-center overflow-hidden ${bgClass}`}>
+      <div className={`relative py-2 sm:py-3 flex items-center justify-center overflow-hidden ${bgClass}`}>
         <div className="w-full max-w-7xl px-4 sm:px-8 flex items-center gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-300 to-indigo-300" />
           <motion.div 
@@ -74,7 +74,7 @@ export default function SectionDivider({
 
   if (variant === 'badge') {
     return (
-      <div className={`relative py-8 sm:py-12 lg:py-16 my-2 flex items-center justify-center overflow-hidden ${bgClass}`}>
+      <div className={`relative py-2 sm:py-3 flex items-center justify-center overflow-hidden ${bgClass}`}>
         <div className="w-full max-w-7xl px-4 sm:px-8 flex items-center gap-4">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-indigo-400/60" />
           <motion.div
@@ -96,7 +96,7 @@ export default function SectionDivider({
 
   // Default 'glow' variant: Glowing center badge with double gradient stroke
   return (
-    <div className={`relative py-8 sm:py-12 lg:py-16 my-2 flex items-center justify-center overflow-hidden ${bgClass}`}>
+    <div className={`relative py-2 sm:py-3 flex items-center justify-center overflow-hidden ${bgClass}`}>
       <div className="w-full max-w-7xl px-4 sm:px-8 flex items-center gap-4">
         {/* Left gradient line */}
         <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-indigo-500/40 to-indigo-600" />

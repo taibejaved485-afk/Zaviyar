@@ -69,7 +69,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-10 sm:py-16 bg-white overflow-hidden transition-colors duration-300 relative">
+    <section id="about" className="py-8 sm:py-10 bg-white overflow-hidden transition-colors duration-300 relative">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 w-64 h-64 bg-indigo-50 rounded-full blur-3xl opacity-60" />
