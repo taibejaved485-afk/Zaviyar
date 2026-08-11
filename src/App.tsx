@@ -25,7 +25,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 selection:bg-indigo-100 selection:text-indigo-900">
       <ScrollProgress />
       <Navbar />
-      <main>
+      <main className="space-y-6 sm:space-y-10 lg:space-y-12">
         <Hero />
         
         <SectionDivider variant="glow" icon="sparkles" title="About Zaviyar" />
