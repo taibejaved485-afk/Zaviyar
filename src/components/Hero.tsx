@@ -30,8 +30,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter">
-              Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Solutions.</span><br />
-              Sustainable <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Growth.</span>
+              Strategic <span className="text-indigo-400">Solutions.</span><br />
+              Sustainable <span className="text-indigo-400">Growth.</span>
             </h1>
             <motion.p 
               initial={{ opacity: 0 }}
