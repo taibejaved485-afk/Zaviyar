@@ -21,4 +21,9 @@ export interface Testimonial {
   author: string;
   role: string;
   company: string;
+  avatarUrl?: string;
+  rating?: number;
+  metric?: string;
+  metricLabel?: string;
+  industry?: string;
 }

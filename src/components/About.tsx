@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Target, Eye, ShieldCheck, Zap, Award, Users, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Value } from '../types';
+import { AnimatedCounter } from './AnimatedCounter';
 
 function TypewriterText({ text }: { text: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
@@ -170,7 +171,7 @@ export default function About() {
                 {stats.slice(0, 2).map((stat, idx) => (
                   <div key={idx} className="backdrop-blur-md bg-white/20 border border-white/20 p-4 rounded-2xl text-white">
                     <stat.icon size={18} className="mb-1.5 text-indigo-300" />
-                    <div className="text-xl font-bold">{stat.value}</div>
+                    <div className="text-xl font-bold"><AnimatedCounter value={stat.value} /></div>
                     <div className="text-[10px] uppercase tracking-wider font-bold opacity-80">{stat.label}</div>
                   </div>
                 ))}
