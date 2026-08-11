@@ -10,7 +10,11 @@ import {
   Rocket,
   ArrowRight,
   Globe,
-  ShieldCheck
+  ShieldCheck,
+  Sparkles,
+  Calendar,
+  FileText,
+  CheckCircle2
 } from 'lucide-react';
 
 const services = [
@@ -150,26 +154,70 @@ export default function Services() {
           ))}
 
           
-          {/* Custom Stats Card */}
+          {/* Executive Strategic Blueprint Banner */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 mt-6 p-1 rounded-2xl sm:rounded-3xl bg-indigo-600 shadow-xl shadow-indigo-500/15"
+            className="lg:col-span-3 mt-6 relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl p-6 sm:p-10 lg:p-12 text-white group"
           >
-            <div className="bg-white rounded-[1.35rem] p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+            {/* Background Ambient Glows & Grid Pattern */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/30 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-indigo-600/40 transition-all duration-700" />
+            <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl pointer-events-none -mb-20 group-hover:bg-purple-600/30 transition-all duration-700" />
+            
+            {/* Subtle grid line background */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-3 text-slate-900 tracking-tight">Need a custom strategic blueprint?</h3>
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-                  Our specialists work alongside your team to build resilient, high-growth organizations. Let's discuss your specific goals.
+                {/* Pill Badge */}
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md">
+                  <Sparkles size={14} className="text-indigo-400 animate-pulse" />
+                  <span>Custom Strategic Blueprint</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight leading-tight">
+                  Ready to Architect Your <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-indigo-200 bg-clip-text text-transparent">Next Growth Milestone?</span>
+                </h3>
+
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal mb-6">
+                  Our senior consultants work directly alongside your executive team to audit operational gaps, optimize resource allocation, and build a high-impact growth roadmap tailored to your industry.
                 </p>
+
+                {/* Feature Bullet Perks */}
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-200">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0" />
+                    <span>Tailored Strategy Roadmap</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0" />
+                    <span>1-on-1 Senior Executive Call</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0" />
+                    <span>100% Confidential Audit</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-wrap justify-center gap-4 shrink-0">
-                <a href="#contact" className="px-7 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5 shadow-lg shadow-indigo-500/20 text-center">
-                  Book a Consultation
+
+              {/* Action Buttons & Badge */}
+              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-4 shrink-0 w-full sm:w-auto">
+                <a 
+                  href="#contact" 
+                  className="w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl font-bold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
+                >
+                  <Calendar size={18} />
+                  <span>Book Consultation</span>
+                  <ArrowRight size={16} />
                 </a>
-                <a href="#contact" className="px-10 py-5 bg-slate-50 hover:bg-slate-100 text-slate-900 border border-slate-200 rounded-2xl font-black transition-all hover:-translate-y-1 text-center">
-                  View Full Brochure
+
+                <a 
+                  href="#contact" 
+                  className="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md rounded-xl font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
+                >
+                  <FileText size={18} />
+                  <span>View Full Brochure</span>
                 </a>
               </div>
             </div>
@@ -179,3 +227,4 @@ export default function Services() {
     </section>
   );
 }
+
