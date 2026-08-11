@@ -132,15 +132,15 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-10 bg-indigo-600 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-500/25 relative overflow-hidden group mt-8"
+              className="p-6 sm:p-8 bg-indigo-600 rounded-2xl sm:rounded-3xl text-white shadow-xl shadow-indigo-500/15 relative overflow-hidden group mt-6"
             >
               <div className="relative z-10">
-                <h3 className="text-2xl font-black mb-4 tracking-tight">Priority Support?</h3>
-                <p className="text-indigo-100 text-lg mb-8 leading-relaxed font-medium">
+                <h3 className="text-xl font-bold mb-2 tracking-tight">Priority Support?</h3>
+                <p className="text-indigo-100 text-sm mb-6 leading-relaxed font-normal">
                   Existing clients can access our dedicated support portal 24/7 for immediate assistance.
                 </p>
-                <button className="flex items-center gap-3 text-base font-black bg-white text-indigo-600 px-8 py-4 rounded-2xl hover:bg-indigo-50 transition-all hover:translate-x-2 shadow-xl">
-                  Client Portal <ArrowRight size={20} />
+                <button className="flex items-center gap-2.5 text-sm font-bold bg-white text-indigo-600 px-6 py-3 rounded-xl hover:bg-indigo-50 transition-all hover:translate-x-1 shadow-md">
+                  Client Portal <ArrowRight size={18} />
                 </button>
               </div>
               <div className="absolute top-0 right-0 -mr-8 -mt-8 w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
@@ -150,7 +150,7 @@ export default function Contact() {
           {/* Form Area */}
           <div className="lg:col-span-7 xl:col-span-8 flex">
             <Reveal className="w-full flex">
-              <div className="bg-[#FCFAF8] p-10 md:p-16 lg:p-20 rounded-[3.5rem] border border-slate-200 shadow-2xl shadow-slate-200/50 relative w-full h-full flex flex-col justify-between">
+              <div className="bg-[#FCFAF8] p-6 sm:p-10 md:p-12 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 relative w-full h-full flex flex-col justify-between">
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div 

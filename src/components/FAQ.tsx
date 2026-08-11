@@ -126,17 +126,17 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-10 text-center p-10 lg:p-14 bg-indigo-600 rounded-[3.5rem] text-white shadow-2xl shadow-indigo-500/20 w-full relative overflow-hidden group"
+          className="mt-8 text-center p-6 sm:p-8 lg:p-10 bg-indigo-600 rounded-2xl sm:rounded-3xl text-white shadow-xl shadow-indigo-500/15 w-full relative overflow-hidden group"
         >
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
           <div className="relative z-10">
-            <h3 className="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Still have questions?</h3>
-            <p className="text-indigo-100 text-xl mb-10 font-medium">We're here to help you navigate your strategic journey.</p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <a href="#contact" className="px-10 py-5 bg-white text-indigo-600 rounded-2xl font-black text-lg hover:-translate-y-1 transition-all shadow-xl text-center active:scale-95">
+            <h3 className="text-2xl lg:text-3xl font-extrabold mb-2 tracking-tight">Still have questions?</h3>
+            <p className="text-indigo-100 text-sm sm:text-base mb-6 font-normal">We're here to help you navigate your strategic journey.</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="#contact" className="px-6 py-3 bg-white text-indigo-600 rounded-xl font-bold text-sm hover:-translate-y-0.5 transition-all shadow-md text-center active:scale-95">
                 Contact Support
               </a>
-              <a href="#contact" className="px-10 py-5 bg-indigo-500 text-white border border-indigo-400 rounded-2xl font-black text-lg hover:-translate-y-1 transition-all text-center active:scale-95">
+              <a href="#contact" className="px-6 py-3 bg-indigo-500 text-white border border-indigo-400 rounded-xl font-bold text-sm hover:-translate-y-0.5 transition-all text-center active:scale-95">
                 Book a Consultation
               </a>
             </div>

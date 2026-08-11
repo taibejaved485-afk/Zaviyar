@@ -63,10 +63,10 @@ export default function Testimonials() {
           </motion.h2>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          <div className="bg-white p-8 sm:p-12 md:p-20 rounded-[2rem] sm:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
+        <div className="relative max-w-4xl mx-auto">
+          <div className="bg-white p-6 sm:p-10 md:p-12 rounded-2xl sm:rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden">
             {/* Massive Background Quote Icon */}
-            <Quote className="absolute -top-10 -left-10 w-48 h-48 sm:w-64 sm:h-64 text-indigo-50 opacity-20 pointer-events-none" />
+            <Quote className="absolute -top-10 -left-10 w-36 h-36 sm:w-48 sm:h-48 text-indigo-50 opacity-20 pointer-events-none" />
             
             <AnimatePresence mode="wait">
               <motion.div
@@ -77,22 +77,22 @@ export default function Testimonials() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10"
               >
-                <div className="flex justify-center mb-8 sm:mb-10">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-500/20">
-                    <Quote size={24} className="sm:w-8 sm:h-8" fill="currentColor" />
+                <div className="flex justify-center mb-5 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center shadow-md shadow-indigo-500/20">
+                    <Quote size={20} className="sm:w-6 sm:h-6" fill="currentColor" />
                   </div>
                 </div>
                 
-                <blockquote className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-slate-900 font-bold leading-tight mb-8 sm:mb-12 italic text-center tracking-tight px-4 sm:px-0">
+                <blockquote className="text-base sm:text-lg md:text-xl text-slate-900 font-bold leading-relaxed mb-6 sm:mb-8 italic text-center tracking-tight px-2 sm:px-6">
                   "{testimonials[current].quote}"
                 </blockquote>
                 
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-px bg-indigo-200 mb-6 sm:mb-8" />
-                  <h4 className="text-lg sm:text-xl lg:text-2xl font-black text-slate-900 mb-2 tracking-tight">
+                  <div className="w-10 h-px bg-indigo-200 mb-4" />
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-1 tracking-tight">
                     {testimonials[current].author}
                   </h4>
-                  <p className="text-xs sm:text-sm lg:text-base text-indigo-600 font-black uppercase tracking-widest text-center">
+                  <p className="text-xs sm:text-sm text-indigo-600 font-bold uppercase tracking-wider text-center">
                     {testimonials[current].role} <br className="sm:hidden" /> — {testimonials[current].company}
                   </p>
                 </div>

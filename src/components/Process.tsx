@@ -88,37 +88,37 @@ export default function Process() {
               transition={{ delay: idx * 0.1, duration: 0.8 }}
               className="relative z-10 group"
             >
-              <div className="relative bg-white p-8 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col h-full overflow-hidden group-hover:-translate-y-4">
+              <div className="relative bg-white p-6 sm:p-7 rounded-2xl border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-indigo-500/10 transition-all duration-500 flex flex-col h-full overflow-hidden group-hover:-translate-y-2">
                 {/* Rotating Glowing Dot Border on Hover */}
-                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-                  <div className="absolute inset-[2px] bg-white rounded-[2.35rem] transition-colors duration-300" />
+                  <div className="absolute inset-[2px] bg-white rounded-[0.9rem] transition-colors duration-300" />
                 </div>
 
-                {/* Step Number Background - Made more visible */}
-                <div className="absolute right-4 top-4 text-8xl font-black text-slate-200/80 select-none pointer-events-none group-hover:text-indigo-500/20 transition-colors duration-500 leading-none">
+                {/* Step Number Background */}
+                <div className="absolute right-4 top-3 text-6xl font-extrabold text-slate-200/70 select-none pointer-events-none group-hover:text-indigo-500/20 transition-colors duration-500 leading-none">
                   0{idx + 1}
                 </div>
 
-                <div className="w-20 h-20 bg-indigo-600 text-white rounded-3xl flex items-center justify-center mb-10 shadow-xl shadow-indigo-500/20 group-hover:rotate-[10deg] group-hover:scale-110 transition-all duration-500 shrink-0 relative z-10">
-                  <step.icon size={36} />
+                <div className="w-12 h-12 bg-indigo-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-all duration-500 shrink-0 relative z-10">
+                  <step.icon size={22} />
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-indigo-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-indigo-600 transition-colors duration-300">
                     {step.title}
                   </h3>
                   
-                  <p className="text-lg text-slate-600 leading-relaxed font-medium mb-10 flex-grow">
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal mb-6 flex-grow">
                     {step.description}
                   </p>
 
-                  <div className="space-y-4">
+                  <div className="space-y-2.5">
                     {step.details.map((detail, dIdx) => (
-                      <div key={dIdx} className="flex items-center gap-3 text-sm font-bold text-slate-500 uppercase tracking-widest group/item transition-colors duration-300 hover:text-indigo-600">
-                        <div className="w-6 h-6 rounded-lg bg-slate-50 flex items-center justify-center shadow-sm group-hover/item:bg-indigo-600 group-hover/item:text-white transition-all duration-300">
-                          <ChevronRight size={14} />
+                      <div key={dIdx} className="flex items-center gap-2.5 text-xs font-bold text-slate-500 uppercase tracking-wider group/item transition-colors duration-300 hover:text-indigo-600">
+                        <div className="w-5 h-5 rounded-md bg-slate-50 flex items-center justify-center shadow-xs group-hover/item:bg-indigo-600 group-hover/item:text-white transition-all duration-300">
+                          <ChevronRight size={12} />
                         </div>
                         <span>{detail}</span>
                       </div>

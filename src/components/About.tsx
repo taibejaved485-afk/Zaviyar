@@ -113,39 +113,39 @@ export default function About() {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4 pt-2">
-              <div className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
+              <div className="relative p-6 bg-[#FCFAF8] rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
                 {/* Rotating Glowing Dot Border on Hover */}
-                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[2.35rem] transition-colors duration-300" />
+                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[0.9rem] transition-colors duration-300" />
                 </div>
 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
-                    <Target size={24} />
+                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-600 shadow-sm mb-3">
+                    <Target size={20} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Our Mission</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                  <h3 className="text-lg font-bold text-slate-900 mb-1.5">Our Mission</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-normal">
                     To empower businesses with tools and strategies needed to thrive in an ever-changing marketplace.
                   </p>
                 </div>
               </div>
 
-              <div className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
+              <div className="relative p-6 bg-[#FCFAF8] rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group overflow-hidden">
                 {/* Rotating Glowing Dot Border on Hover */}
-                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[2.35rem] transition-colors duration-300" />
+                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[0.9rem] transition-colors duration-300" />
                 </div>
 
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm mb-4">
-                    <Eye size={24} />
+                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-600 shadow-sm mb-3">
+                    <Eye size={20} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Our Vision</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                  <h3 className="text-lg font-bold text-slate-900 mb-1.5">Our Vision</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed font-normal">
                     A future where businesses of all sizes have access to the same caliber of strategic thinking traditionally reserved for large corporations.
                   </p>
                 </div>
@@ -159,19 +159,19 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative h-full min-h-[480px] flex"
+            className="relative h-full min-h-[380px] flex"
           >
-            <div className="relative w-full h-full min-h-full rounded-[3.5rem] overflow-hidden shadow-2xl border-[12px] border-white flex flex-col justify-end">
+            <div className="relative w-full h-full min-h-full rounded-3xl overflow-hidden shadow-xl border-4 border-white flex flex-col justify-end">
               <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                 <source src="/about-video.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent" />
-              <div className="relative z-10 p-6 sm:p-8 grid grid-cols-2 gap-4">
+              <div className="relative z-10 p-5 sm:p-6 grid grid-cols-2 gap-3">
                 {stats.slice(0, 2).map((stat, idx) => (
-                  <div key={idx} className="backdrop-blur-md bg-white/20 border border-white/20 p-5 rounded-3xl text-white">
-                    <stat.icon size={20} className="mb-2 text-indigo-300" />
-                    <div className="text-2xl font-black">{stat.value}</div>
-                    <div className="text-[10px] uppercase tracking-widest font-black opacity-80">{stat.label}</div>
+                  <div key={idx} className="backdrop-blur-md bg-white/20 border border-white/20 p-4 rounded-2xl text-white">
+                    <stat.icon size={18} className="mb-1.5 text-indigo-300" />
+                    <div className="text-xl font-bold">{stat.value}</div>
+                    <div className="text-[10px] uppercase tracking-wider font-bold opacity-80">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -179,27 +179,27 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-12 gap-10 items-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-6 border border-indigo-100">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold tracking-[0.15em] uppercase mb-4 border border-indigo-100">
               <ShieldCheck size={14} className="fill-current" />
               <span>Why Choose Us</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight">Experience Meets <span className="text-indigo-600">Insight</span></h2>
-            <p className="text-lg text-slate-600 leading-relaxed mb-6 font-medium">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Experience Meets <span className="text-indigo-600">Insight</span></h2>
+            <p className="text-base text-slate-600 leading-relaxed mb-4 font-normal">
               Businesses today face constant change. Navigating this landscape requires more than good intentions; it requires experience, insight, and a trusted partner who understands the bigger picture.
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+            <p className="text-base text-slate-600 leading-relaxed font-normal">
               We take the time to understand your business from the inside out, then design strategies tailored specifically to your needs, resources, and ambitions.
             </p>
           </motion.div>
 
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
             {values.map((v, idx) => (
               <motion.div
                 key={v.title}
@@ -207,18 +207,18 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="relative p-8 bg-[#FCFAF8] rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 group overflow-hidden"
+                className="relative p-6 bg-[#FCFAF8] rounded-2xl border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-500 group overflow-hidden"
               >
                 {/* Rotating Glowing Dot Border on Hover */}
-                <div className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
                   <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[2.35rem] transition-colors duration-300" />
+                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[0.9rem] transition-colors duration-300" />
                 </div>
 
                 <div className="relative z-10">
-                  <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors tracking-tight">{v.title}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-medium">{v.description}</p>
+                  <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors tracking-tight">{v.title}</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed font-normal">{v.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -228,26 +228,26 @@ export default function About() {
 
 
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 mb-16 mt-16">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12 mt-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group p-10 lg:p-14 bg-slate-900 rounded-[4rem] text-white relative overflow-hidden flex flex-col justify-between"
+            className="group p-6 sm:p-8 bg-slate-900 rounded-2xl sm:rounded-3xl text-white relative overflow-hidden flex flex-col justify-between"
           >
             {/* Rotating Glowing Dot Border on Hover */}
-            <div className="absolute inset-0 rounded-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
               <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#818cf8_335deg,#c084fc_352deg,#ffffff_360deg)] blur-md opacity-90" />
               <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#818cf8_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-              <div className="absolute inset-[2px] bg-slate-900 rounded-[3.85rem]" />
+              <div className="absolute inset-[2px] bg-slate-900 rounded-[1.35rem]" />
             </div>
 
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-10 shadow-2xl shadow-indigo-600/20">
-                <Users size={32} />
+              <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-indigo-600/20">
+                <Users size={22} />
               </div>
-              <h3 className="text-3xl lg:text-4xl font-black mb-6 tracking-tight uppercase tracking-widest text-indigo-400">Our Team</h3>
-              <p className="text-slate-400 text-lg lg:text-xl leading-relaxed font-medium">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 tracking-tight text-indigo-400">Our Team</h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
                 Behind Zaviyar is a team of experienced professionals with diverse backgrounds in strategic planning and organizational development. Each member brings a wealth of knowledge and a passion for helping businesses succeed.
               </p>
             </div>
@@ -259,21 +259,21 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="group p-10 lg:p-14 bg-[#FCFAF8] rounded-[4rem] border border-slate-100 relative overflow-hidden flex flex-col justify-between"
+            className="group p-6 sm:p-8 bg-[#FCFAF8] rounded-2xl sm:rounded-3xl border border-slate-100 relative overflow-hidden flex flex-col justify-between"
           >
             {/* Rotating Glowing Dot Border on Hover */}
-            <div className="absolute inset-0 rounded-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
+            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
               <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
               <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-              <div className="absolute inset-[2px] bg-[#FCFAF8] rounded-[3.85rem]" />
+              <div className="absolute inset-[2px] bg-[#FCFAF8] rounded-[1.35rem]" />
             </div>
 
             <div className="relative z-10">
-              <div className="w-16 h-16 bg-white border border-slate-100 rounded-2xl flex items-center justify-center mb-10 shadow-sm text-indigo-600">
-                <Award size={32} />
+              <div className="w-12 h-12 bg-white border border-slate-100 rounded-xl flex items-center justify-center mb-5 shadow-sm text-indigo-600">
+                <Award size={22} />
               </div>
-              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 tracking-tight uppercase tracking-widest text-indigo-600">Why Trust Us</h3>
-              <p className="text-slate-600 text-lg lg:text-xl leading-relaxed font-medium">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 tracking-tight text-indigo-600">Why Trust Us</h3>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
                 We deliver on our promises. We take the time to understand your challenges, communicate clearly, and remain accountable for the results we help create. This dedication builds long-lasting partnerships.
               </p>
             </div>
