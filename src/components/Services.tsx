@@ -159,7 +159,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 mt-6 relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl p-6 sm:p-10 lg:p-12 text-white group"
+            className="lg:col-span-3 mt-6 relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl px-6 py-5 sm:px-8 sm:py-6 lg:px-10 lg:py-6 text-white group"
           >
             {/* Background Ambient Glows & Grid Pattern */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/30 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-indigo-600/40 transition-all duration-700" />
@@ -168,55 +168,55 @@ export default function Services() {
             {/* Subtle grid line background */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-8">
               <div className="flex-1 text-center lg:text-left">
                 {/* Pill Badge */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 rounded-full text-xs font-bold uppercase tracking-widest mb-4 backdrop-blur-md">
-                  <Sparkles size={14} className="text-indigo-400 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 rounded-full text-xs font-bold uppercase tracking-widest mb-2.5 backdrop-blur-md">
+                  <Sparkles size={13} className="text-indigo-400 animate-pulse" />
                   <span>Custom Strategic Blueprint</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight leading-tight">
+                <h3 className="text-2xl sm:text-3xl md:text-3xl font-extrabold mb-2.5 text-white tracking-tight leading-tight">
                   Ready to Architect Your <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-indigo-200 bg-clip-text text-transparent">Next Growth Milestone?</span>
                 </h3>
 
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal mb-6">
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal mb-3.5">
                   Our senior consultants work directly alongside your executive team to audit operational gaps, optimize resource allocation, and build a high-impact growth roadmap tailored to your industry.
                 </p>
 
                 {/* Feature Bullet Perks */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-200">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 text-xs sm:text-sm font-medium text-slate-200">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0" />
+                    <CheckCircle2 size={15} className="text-indigo-400 shrink-0" />
                     <span>Tailored Strategy Roadmap</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0" />
+                    <CheckCircle2 size={15} className="text-indigo-400 shrink-0" />
                     <span>1-on-1 Senior Executive Call</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 size={16} className="text-indigo-400 shrink-0" />
+                    <CheckCircle2 size={15} className="text-indigo-400 shrink-0" />
                     <span>100% Confidential Audit</span>
                   </div>
                 </div>
               </div>
 
               {/* Action Buttons & Badge */}
-              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-4 shrink-0 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center justify-center gap-3 shrink-0 w-full sm:w-auto">
                 <a 
                   href="#contact" 
-                  className="w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl font-bold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
+                  className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl font-bold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
                 >
-                  <Calendar size={18} />
+                  <Calendar size={17} />
                   <span>Book Consultation</span>
-                  <ArrowRight size={16} />
+                  <ArrowRight size={15} />
                 </a>
 
                 <a 
                   href="#contact" 
-                  className="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md rounded-xl font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
+                  className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md rounded-xl font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 text-center"
                 >
-                  <FileText size={18} />
+                  <FileText size={17} />
                   <span>View Full Brochure</span>
                 </a>
               </div>
