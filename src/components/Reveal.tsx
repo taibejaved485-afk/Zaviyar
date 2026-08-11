@@ -28,6 +28,7 @@ export const Reveal = ({ children, width = '100%', className = '' }: Props) => {
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
+        className="w-full h-full flex flex-col flex-1"
       >
         {children}
       </motion.div>
