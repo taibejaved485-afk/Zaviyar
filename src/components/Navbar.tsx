@@ -12,6 +12,7 @@ export default function Navbar() {
 
   const searchableContent = [
     { name: 'About Us', href: '#about', category: 'Section' },
+    { name: 'Why Choose Us', href: '#why-choose-us', category: 'Section' },
     { name: 'Our Process', href: '#process', category: 'Section' },
     { name: 'Services', href: '#services', category: 'Section' },
     { name: 'Strategic Planning', href: '#services', category: 'Service' },

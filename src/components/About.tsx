@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Target, Eye, ShieldCheck, Zap, Award, Users, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
-import { Value } from '../types';
+import { Target, Eye, Zap, Award, Users, TrendingUp, CheckCircle2 } from 'lucide-react';
 import { AnimatedCounter } from './AnimatedCounter';
 
 function TypewriterText({ text }: { text: string }) {
@@ -41,25 +40,6 @@ function TypewriterText({ text }: { text: string }) {
   );
 }
 
-const values: Value[] = [
-  {
-    title: 'Integrity',
-    description: 'Integrity guides every recommendation we make. We believe in transparency, honest communication, and always acting in the best interest of our clients.'
-  },
-  {
-    title: 'Excellence',
-    description: 'Excellence drives our work. We hold ourselves to the highest standards, continuously refining our methods to deliver the best possible outcomes.'
-  },
-  {
-    title: 'Partnership',
-    description: 'Partnership defines our relationships. We see ourselves not as outside consultants, but as invested partners in your success.'
-  },
-  {
-    title: 'Innovation',
-    description: 'Innovation shapes our thinking. We stay ahead of industry trends and bring fresh, forward-looking perspectives to every engagement.'
-  }
-];
-
 const stats = [
   { label: 'Successful Projects', value: '500+', icon: CheckCircle2 },
   { label: 'Client Retention', value: '98%', icon: Users },
@@ -92,7 +72,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-4">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -179,123 +159,6 @@ export default function About() {
             </div>
           </motion.div>
         </div>
-
-        <div className="grid lg:grid-cols-12 gap-10 items-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-5"
-          >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold tracking-[0.15em] uppercase mb-4 border border-indigo-100">
-              <ShieldCheck size={14} className="fill-current" />
-              <span>Why Choose Us</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Experience Meets <span className="text-indigo-600">Insight</span></h2>
-            <p className="text-base text-slate-600 leading-relaxed mb-4 font-normal">
-              Businesses today face constant change. Navigating this landscape requires more than good intentions; it requires experience, insight, and a trusted partner who understands the bigger picture.
-            </p>
-            <p className="text-base text-slate-600 leading-relaxed font-normal">
-              We take the time to understand your business from the inside out, then design strategies tailored specifically to your needs, resources, and ambitions.
-            </p>
-          </motion.div>
-
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
-            {values.map((v, idx) => (
-              <motion.div
-                key={v.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="relative p-6 bg-[#FCFAF8] rounded-2xl border border-slate-100 hover:bg-white hover:shadow-xl transition-all duration-500 group overflow-hidden"
-              >
-                {/* Rotating Glowing Dot Border on Hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
-                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
-                  <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-                  <div className="absolute inset-[2px] bg-[#FCFAF8] group-hover:bg-white rounded-[0.9rem] transition-colors duration-300" />
-                </div>
-
-                <div className="relative z-10">
-                  <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors tracking-tight">{v.title}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed font-normal">{v.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-
-
-
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12 mt-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="group p-6 sm:p-8 bg-slate-900 rounded-2xl sm:rounded-3xl text-white relative overflow-hidden flex flex-col justify-between"
-          >
-            {/* Rotating Glowing Dot Border on Hover */}
-            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
-              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#818cf8_335deg,#c084fc_352deg,#ffffff_360deg)] blur-md opacity-90" />
-              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#818cf8_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-              <div className="absolute inset-[2px] bg-slate-900 rounded-[1.35rem]" />
-            </div>
-
-            <div className="relative z-10">
-              <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-indigo-600/20">
-                <Users size={22} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 tracking-tight text-indigo-400">Our Team</h3>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
-                Behind Zaviyar is a team of experienced professionals with diverse backgrounds in strategic planning and organizational development. Each member brings a wealth of knowledge and a passion for helping businesses succeed.
-              </p>
-            </div>
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-600/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="group p-6 sm:p-8 bg-[#FCFAF8] rounded-2xl sm:rounded-3xl border border-slate-100 relative overflow-hidden flex flex-col justify-between"
-          >
-            {/* Rotating Glowing Dot Border on Hover */}
-            <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none p-[2px] z-0 overflow-hidden">
-              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#a855f7_352deg,#ffffff_360deg)] blur-md opacity-90" />
-              <div className="absolute top-1/2 left-1/2 w-[300%] h-[300%] animate-spin-dot bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,#6366f1_335deg,#38bdf8_352deg,#ffffff_360deg)]" />
-              <div className="absolute inset-[2px] bg-[#FCFAF8] rounded-[1.35rem]" />
-            </div>
-
-            <div className="relative z-10">
-              <div className="w-12 h-12 bg-white border border-slate-100 rounded-xl flex items-center justify-center mb-5 shadow-sm text-indigo-600">
-                <Award size={22} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 tracking-tight text-indigo-600">Why Trust Us</h3>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-                We deliver on our promises. We take the time to understand your challenges, communicate clearly, and remain accountable for the results we help create. This dedication builds long-lasting partnerships.
-              </p>
-            </div>
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-100/50 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-1000" />
-          </motion.div>
-        </div>
-
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-3 px-10 py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-indigo-700 transition-all shadow-2xl shadow-indigo-600/30 hover:-translate-y-1 active:scale-95"
-          >
-            Start Your Transformation <ArrowRight size={20} />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

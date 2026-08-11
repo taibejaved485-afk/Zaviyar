@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import About from './components/About';
+import WhyChooseUs from './components/WhyChooseUs';
 import Services from './components/Services';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
@@ -32,6 +33,12 @@ export default function App() {
         
         <Reveal>
           <About />
+        </Reveal>
+        
+        <SectionDivider variant="gradient-bar" icon="award" title="Why Choose Us" />
+        
+        <Reveal>
+          <WhyChooseUs />
         </Reveal>
         
         <SectionDivider variant="badge" icon="award" title="Key Highlights" />
